@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./IMAGENES/restoradar.png" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+
+  <script src="https://kit.fontawesome.com/6410e86f64.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="../CSS/formulario.css" />
+  <title>FORMULARIO</title>
+</head>
+
+<body>
+  <header id="myHeader">
+  </header>
+  <main>
+    <section>
+      <h1>Detalles de la Reserva</h1>
+      <div class="container">
+        <p>Restaurante Elegido: <span id="restElegido"></span></p>
+        <p>Nombre: <span id="nombre"></span></p>
+        <p>Teléfono: <span id="telefono"></span></p>
+        <p>Fecha: <span id="fecha"></span></p>
+        <p>Hora: <span id="hora"></span></p>
+        <p>Número de Personas: <span id="personas"></span></p>
+        <p>Lugar: <span id="lugar"></span></p>
+        <p>Mesa Reservada: <span id="mesaReservada"></span></p>
+      </div>
+    </section>
+    <section id="correo">
+      <label for="email">Correo electrónico: </label>
+      <input type="email" id="email" name="email" required>
+      <button id="enviarCorreo">Enviar</button>
+    </section>
+  </main>
+
+  <script>  
+// Script para detalles de reserva y envío de correo
+
+  // Recuperar los datos del almacenamiento local
+
+  var restElegido = localStorage.getItem('restElegido');
+  var nombre = localStorage.getItem('nombre');
+  var telefono = localStorage.getItem('telefono');
+  var fecha = localStorage.getItem('fecha');
+  var hora = localStorage.getItem('hora');
+  var personas = localStorage.getItem('personas');
+  var lugar = localStorage.getItem('lugar');
+  var mesaReservada = localStorage.getItem('mesaReservada');
+
+  // Mostrar los datos en la página
+  document.getElementById('restElegido').textContent = restElegido;
+  document.getElementById('nombre').textContent = nombre;
+  document.getElementById('telefono').textContent = telefono;
+  document.getElementById('fecha').textContent = fecha;
+  document.getElementById('hora').textContent = hora;
+  document.getElementById('personas').textContent = personas;
+  document.getElementById('lugar').textContent = lugar;
+  document.getElementById('mesaReservada').textContent = mesaReservada;
+
+  // Limpiar los datos del almacenamiento local después de usarlos
+  localStorage.removeItem('restElegido');
+  localStorage.removeItem('nombre');
+  localStorage.removeItem('telefono');
+  localStorage.removeItem('fecha');
+  localStorage.removeItem('hora');
+  localStorage.removeItem('personas');
+  localStorage.removeItem('lugar');
+  localStorage.removeItem('mesaReservada');
+
+  // Agregar evento clic al botón de enviar correo
+  document.getElementById('enviarCorreo').addEventListener('click', function() {
+  var correo = document.getElementById('email').value;
+  if (validarCorreo(correo)) {
+    // Aquí puedes agregar el código para enviar el correo
+    alert('Correo enviado\nGracias por Elegirnos\nLos esperamos !!!!');
+  } else {
+    alert('Por favor, introduce un correo electrónico válido\nFormato: xxxxxx@xxx.xxx')
+  }
+  });
+
+  // Función para validar el formato del correo electrónico
+  function validarCorreo(correo) {
+    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(correo);
+  }
+  
+  </script>
+  
+
+  
+  <footer>
+
+  </footer>
+  <script src="../JS/formulario.js"></script>
+</body>
+
+</html>

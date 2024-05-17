@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../IMAGENES/restoradar.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/6410e86f64.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Acceso Restaurante</title>
+    <link rel="stylesheet" href="../CSS/accesoRest.css" />
+  </head>
+
+  <body>
+    <header></header>
+    <main>
+      <h2>Que tipo de información te gustaria analizar?</h2>
+
+      <div class="radio">
+        <p class="auto-style3">
+          <input name="radio" type="radio" value="Graficos1" />
+          <span class="auto-style4"> Reservas Comparativas </span>
+        </p>
+
+        <p class="auto-style3">
+          <input name="radio" type="radio" value="Graficos2" />
+          <span class="auto-style4"> Comensales por Reserva </span>
+        </p>
+
+        <p class="auto-style3">
+          <input name="radio" type="radio" value="Graficos3" />
+          <span class="auto-style4"> En relacion al Total </span>
+        </p>
+
+        <p class="auto-style3">
+          <input name="radio" type="radio" value="Graficos4" />
+          <span class="auto-style4"> Por Ubicación </span>
+        </p>
+      </div>
+      <section id="introduccion">
+        <p>
+          En esta Sección encontraras las estadísticas respecto de los
+          movimientos en tu negocio.
+        </p>
+      </section>
+
+      <div id="div1" style="display: none">
+        <div class="card-ward">
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img src="../IMAGENES/Charts/Reservas por Mes.png" alt="" />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comparativas</span>
+                </div>
+                <div class="texto-card">
+                  <p>Compara la cantidad de Reservas en un periodo de tiempo</p>
+                  <p>Tipo de Grafico Comparativo Evolutivo</p>
+                  <p>
+                    Mide el rendimiento de las Reservas a lo largo del tiempo
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Cantidad de Comensales.png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comparativas</span>
+                </div>
+                <div class="texto-card">
+                  <p>Restaurante 2</p>
+                  <p>Direccion2</p>
+                  <p>Precio2</p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Barras Comensales por Reserva (Mes).png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comparativas</span>
+                </div>
+                <div class="texto-card">
+                  <p>Restaurante 3</p>
+                  <p>Direccion3</p>
+                  <p>Precio3</p>
+                </div>
+              </lower>
+            </article>
+          </a>
+        </div>
+      </div>
+
+      <div id="div2" style="display: none">
+        <div class="card-ward">
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/_Reservas _- Dias de Anticipacion -.png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comensales</span>
+                </div>
+                <div class="texto-card">
+                  <p>Comensales por Reserva</p>
+                  <p>Tipo de Grafico de Barras</p>
+                  <p>
+                    Mide que cantidad de Comensales se Reserva por cada Reserva
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Barras Comensales por Reserva (Mes).png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comensales</span>
+                </div>
+                <div class="texto-card">
+                  <p>Comensales por Reserva</p>
+                  <p>Tipo de Grafico de Barras</p>
+                  <p>
+                    Mide que cantidad de Comensales se Reserva por cada Reserva
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Torta Comensales por Reserva (MES) (1).png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Comensales</span>
+                </div>
+                <div class="texto-card">
+                  <p>Comensales por Reserva</p>
+                  <p>Tipo de Grafico de Torta</p>
+                  <p>
+                    Establece un compartivo Porcentual por Comensales de la
+                    Reserva
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+        </div>
+      </div>
+
+      <div id="div3" style="display: none">
+        <div class="card-ward">
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img src="../IMAGENES/Charts/ReservassobreelTotal.png" alt="" />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Oriental</span>
+                </div>
+                <div class="texto-card">
+                  <p>
+                    Proporcion de Reservas sobre el total de Comensales del
+                    Restaurante
+                  </p>
+                  <p>Tipo de Grafico Torta</p>
+                  <p>
+                    Indica la participación que tiene el sistema de Reservas
+                    sobre el total
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img src="../IMAGENES/Charts/HombreMujer.png" alt="" />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Oriental</span>
+                </div>
+                <div class="texto-card">
+                  <p>
+                    Proporcion de Reservas sobre el total de Comensales del
+                    Restaurante
+                  </p>
+                  <p>Tipo de Grafico Torta</p>
+                  <p>
+                    Indica la participación que tiene el sistema de Reservas
+                    sobre el total
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img src="../IMAGENES/Charts/Chart Title (1).png" alt="" />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Oriental</span>
+                </div>
+                <div class="texto-card">
+                  <p>
+                    Proporcion de Reservas sobre el total de Comensales del
+                    Restaurante
+                  </p>
+                  <p>Tipo de Grafico Torta</p>
+                  <p>
+                    Indica la participación que tiene el sistema de Reservas
+                    sobre el total
+                  </p>
+                </div>
+              </lower>
+            </article>
+          </a>
+        </div>
+      </div>
+
+      <div id="div4" style="display: none">
+        <div class="card-ward">
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/La Noche de las Pizzas .png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Vegana</span>
+                </div>
+                <div class="texto-card">
+                  <p>Restaurante 1</p>
+                  <p>Direccion1</p>
+                  <p>Precio1</p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Rerservas por Ubicacion.png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Vegana</span>
+                </div>
+                <div class="texto-card">
+                  <p>Restaurante 2</p>
+                  <p>Direccion2</p>
+                  <p>Precio2</p>
+                </div>
+              </lower>
+            </article>
+          </a>
+
+          <a href="#">
+            <article class="card">
+              <upper class="upper-card">
+                <img
+                  src="../IMAGENES/Charts/Reservas de Mesas_- Semana y  Turno -.png"
+                  alt=""
+                />
+              </upper>
+              <lower class="lower-card">
+                <div class="categoria-card">
+                  <span>Pizza</span>
+                </div>
+                <div class="texto-card">
+                  <p>Restaurante 3</p>
+                  <p>Direccion3</p>
+                  <p>Precio3</p>
+                </div>
+              </lower>
+            </article>
+          </a>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../JS/accesoRest.js"></script>
+  </body>
+</html>

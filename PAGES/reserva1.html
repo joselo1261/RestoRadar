@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Restaurante</title>
+    <link rel="stylesheet" href="../CSS/reserva1.css"> <!-- Asegúrate de tener un archivo CSS para estilos adicionales -->
+    <script src="https://kit.fontawesome.com/6410e86f64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <header id="myHeader"></header>
+    <div class="reserva-content">
+    <div id="detalleApp" class="detalle-container">
+        <!-- Aquí se mostrarán los detalles del restaurante seleccionado -->
+    </div>
+    <div class="mapa">
+        <!-- Utiliza el iframe para mostrar el mapa de Google -->
+        <iframe id="googleMap" width="300" height="auto" frameborder="0" style="border:0" allowfullscreen=""
+          aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    </div>
+    <h1 id="title">Reserva</h1>
+    <div class="container-reserva">
+        <div class="reserva-form">
+          <form id="miFormulario" method="POST" enctype="multipart/form-data" action="../PAGES/formulario.html"
+            target="_blank">
+            <label for="restauranteElegido">Restaurante: <span id="restElegido"></span></label>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" name="hora" required>
+            <label for="personas">Número de Personas:</label>
+            <select id="personas" name="personas" required>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6 o más</option>
+            </select>
+            <label for="lugar">Lugar:</label>
+            <select id="lugar" name="lugar" required>
+              <option value="Adentro">Adentro</option>
+              <option value="Afuera">Afuera</option>
+            </select>
+            <label for="mesaReservada">Mesa reservada: <span id="numeroSeleccionado"></span></label>
+            <input type="submit" value="Reservar">
+          </form>
+        </div>
+        <div>
+          <h3>Elige tu Mesa => <span id="numeroSeleccionadoEligeMesa"></span></h3>
+          <div class="grid-container1" id="gridContainer"></div>
+        </div>
+      </div>
+<footer></footer>    
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="../JS/reserva1.js"></script>
+</body>
+</html>

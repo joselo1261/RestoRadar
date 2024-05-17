@@ -1,0 +1,329 @@
+/* General */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Arial", sans-serif;
+}
+
+h1{
+    margin: 10px 0 10px 0;
+    color: blue;
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center ;
+    margin-bottom: 20px;
+}
+
+
+/* Estilo de los labels */
+.container label {
+  line-height: 32px;
+  text-decoration: solid;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 20px;
+
+}
+
+.contenedor{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around ;
+  margin-bottom: 20px;
+}
+
+
+/* Estilo del botón */
+.btn-primary {
+  font-size: 16px;
+  padding: 3px 20px;
+  height: 35px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 20px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Cambia el color al pasar el ratón */
+}
+
+/* ------------ Tarjetas -------------- */
+
+.contenedor .tarjeta {
+  width: 200px;
+  border: 1px solid #007bff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 0 20px 20px 10px;
+  background-color: none;
+  transition: transform 0.3s ease; /* Agregamos una transición para suavizar el cambio de tamaño */
+  cursor: pointer; /* Cambiamos el cursor al pasar sobre la tarjeta */
+}
+
+.contenedor .tarjeta:hover {
+  transform: scale(1.1); /* Aumentamos el tamaño al pasar el mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Aumentamos la sombra al pasar el mouse */
+}
+
+.tarjeta img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Opcional: aplicar bordes redondeados a la imagen */
+  margin-bottom: 10px; /* Espacio entre la imagen y el resto del contenido */
+}
+
+/* Estilo de los filtros */
+.container select {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+/* Estilo del botón */
+.btn-primary {
+  font-size: 16px;
+  padding: 5px 20px;
+  border: 1px solid #112d4e;
+  border-radius: 5px;
+  background-color: #112d4e;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #E0CF82;
+  color: black;
+}
+
+#selector-cocina {
+    font-size: 16px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+  }
+  
+  #selector-cocina:hover,
+  #selector-cocina:focus {
+    border-color: #007bff;
+  }
+
+
+/* Header y barra de navegacion */
+header {
+    display: flex;
+    position: sticky;
+    top: 0; /* Fijar en la parte superior */
+    z-index: 1000; /* Alto valor de z-index */
+    height: 100px; /* Altura deseada */
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    background-color: #E0CF82;
+    padding: 2rem;
+  }
+  
+  .logo img {
+    max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
+  }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+  }
+  
+  .nav-list li a {
+    text-decoration: none;
+    color: #333; /* Color del texto del botón */
+    padding: 10px 20px; /* Espacio alrededor del texto del botón */
+    border: 1px solid #333; /* Borde del botón */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: all 0.3s ease; /* Efecto de transición */
+  }
+  
+  .nav-list li a:hover {
+    background-color: #112d4e; /* Color de fondo al pasar el ratón */
+    color: #fff; /* Cambia el color del texto al pasar el ratón */
+    transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  }
+  
+  .abrir-menu,
+  .cerrar-menu {
+    display: none; /* no se vean botones */
+  }
+  
+  /* Para que se haga transparente el header */
+  .transparent-header {
+    background-color: rgba(224, 207, 130, 0.5); /* Color de fondo transparente */
+    transition: background-color 0.3s; /* Agregar una transición suave */
+  }
+  
+  .transparent-header .logo img {
+    opacity: 0.7; /* Cambiar la opacidad del logo */
+    transition: opacity 0.3s ease; /* Agregar una transición suave */
+  }
+  
+  .transparent-header .logo img:hover {
+    opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
+  }
+  
+  /* Media queries para hacer responsivo */
+  @media screen and (max-width: 600px) {
+    /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+    .abrir-menu,
+    .cerrar-menu {
+      display: block;
+      border: 0;
+      font-size: 2rem; /* Ajuste del tamaño del botón de menú */
+      background-color: transparent;
+      cursor: pointer;
+    }
+  
+    .abrir-menu {
+      color: #1c1c1c;
+    }
+  
+    .cerrar-menu {
+      color: #ececec;
+    }
+  
+    .nav {
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Alinea el menú a la derecha */
+      justify-content: flex-end; /* Justifica el menú a la derecha */
+      gap: 1rem;
+      position: absolute;
+      top: 100px; /* Ajuste para evitar superposición con el header */
+      right: 0;
+      background-color: #112d4e;
+      padding: 2rem;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      max-width: 300px; /* Ancho máximo del menú desplegable */
+      width: 80%; /* Ajusta el ancho del menú */
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+  
+    .nav.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .nav-list {
+      flex-direction: column;
+      align-items: flex-end; /* Alinea los elementos del menú a la derecha */
+    }
+  
+    .nav-list li a {
+      color: #ecececec;
+    }
+  
+    .nav-list li a:hover {
+      color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
+      font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
+    }
+  
+  
+    .logo img {
+      max-width: 80px;
+    }
+  
+    .social-icons a {
+      font-size: 20px;
+    }
+  }
+  
+
+  /* Estilos del Footer completo */
+footer {
+    position: relative;
+    color: whitesmoke;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #112d4e;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .social-icons {
+    margin-bottom: 10px; /* Agregado para separar los íconos de contacto */
+  }
+  
+  .social-icons a {
+    font-size: 20px;
+    margin-right: 20px;
+    color: #fff;
+    transition: font-size 0.5s; /* Cambiado a 'font-size' */
+  }
+  
+  .social-icons a:hover {
+    color: #E0CF82;
+    font-size: 24px; /* Aumenta el tamaño al pasar el mouse */
+  }
+  
+  .contacto a {
+    text-decoration: none;
+    color: whitesmoke;
+    margin-top: 10px;
+    display: block; /* Hace que los enlaces se muestren como bloques */
+  }
+  
+  .contacto a:hover {
+    text-decoration: underline;
+    color: #E0CF82;
+  }
+  
+  .derechos p {
+    margin-top: 20px;
+    color: whitesmoke;
+  }
+  
+  /* Estilos específicos para el logo del footer */
+  .logo-footer {
+    margin-bottom: 20px; /* Añadido para separar el logo del resto del contenido */
+  }
+  
+  .logo-footer img {
+    max-height: 80px;
+    max-width: 100%;
+    filter: grayscale(100%);
+    opacity: 0.6;
+  }
+  
+  /* ----- Colocar logo en el footer ------ */
+  
+  .logo-container {
+    display: flex;
+    align-items: center; /* Centra verticalmente el logo */
+    justify-content: center; /* Centra horizontalmente el logo */
+  }
+  
+  
