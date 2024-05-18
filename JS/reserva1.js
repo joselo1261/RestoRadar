@@ -119,6 +119,7 @@ const dato = JSON.parse(localStorage.getItem('tarjetaSeleccionada'));
 // Configuración de la grilla
 const numCols = 5; // Número de columnas Fijas
 const capacidad = dato.capacidad; // Capacidad del restaurante
+console.log("Capacidad: ",capacidad); // Verificar capacidad
 const numRows = Math.ceil(capacidad / numCols); // Número de filas
 
 // Establecer el estilo del contenedor de la grilla

@@ -76,6 +76,7 @@ cerrar.addEventListener("click", () => {
 // Lee los parámetros de consulta de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const capacidad = urlParams.get('capacidad');
+console.log("Capacidad: ",capacidad); // Verificar capacidad
 
 // Selecciona los elementos del DOM
 const gridContainer = document.getElementById("gridContainer");
