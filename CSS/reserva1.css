@@ -199,7 +199,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 40px;
+  padding: 60px;
   border-radius: 20px;
   max-width: auto;
   background-color: lightgray;
@@ -213,6 +213,7 @@ footer {
   border-radius: 20px;
   box-sizing: border-box;
   flex: 1 1 300px;
+  line-height: 2
 
 }
 
@@ -220,7 +221,9 @@ footer {
   max-width: 100%;
   height: auto;
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .mapa {
@@ -231,7 +234,7 @@ footer {
 
 .mapa iframe {
   width: 100%;
-  height: 300px;
+  height: 400px;
   border: 1px solid #112d4e;
   border-radius: 20px;
 }
