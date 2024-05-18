@@ -73,19 +73,29 @@ cerrar.addEventListener("click", () => {
 
 
 // ------------ CREAR GRILLA MESAS -----------------------
+// Lee los parámetros de consulta de la URL
+const urlParams = new URLSearchParams(window.location.search);
+const capacidad = urlParams.get('capacidad');
 
 // Selecciona los elementos del DOM
 const gridContainer = document.getElementById("gridContainer");
 const numeroSeleccionado = document.getElementById("numeroSeleccionado");
 let cuadradoSeleccionadoAnteriormente = null;
 
-// Configuración de la grilla
-const numCols = 5; // Número de columnas Fijo
-const numRows = 8; // Número de filas
+// Llamar la tarjerta Seleccionda y traer la capacidad del restaurante
+const dato = JSON.parse(localStorage.getItem('tarjetaSeleccionada'));
 
+// Configuración de la grilla
+const numCols = 5; // Número de columnas Fijas
+const numRows = Math.ceil(capacidad / numCols); // Número de filas
+
+// Establecer el estilo del contenedor de la grilla
+gridContainer.style.display = 'grid';
+gridContainer.style.gridTemplateColumns = `repeat(${numCols}, 1fr)`;
+gridContainer.style.gap = '10px';
 
 // Itera para crear cada cuadrado en la grilla
-for (let i = 1; i <= numRows * numCols; i++) {
+for (let i = 1; i <= capacidad; i++) {
   const gridItem = document.createElement("div");
   gridItem.classList.add("grid-item");
 
