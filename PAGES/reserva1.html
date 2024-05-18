@@ -29,7 +29,7 @@
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required>
             <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" name="telefono" required>
+            <input type="tel" id="telefono" name="telefono" required pattern="\(\d{3,4}\)\d{7,8}" title="El número de teléfono debe tener el formato => (XXX)XXXXXXXX o (XXXX)XXXXXXX ">
             <label for="fecha">Fecha:</label>
             <input type="date" id="fecha" name="fecha" required>
             <label for="hora">Hora:</label>
