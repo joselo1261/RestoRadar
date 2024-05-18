@@ -218,6 +218,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("horario").innerText = horario;
   document.getElementById("precio").innerText = precio;
 
+  
   // Construir la URL de Google Maps con las coordenadas
   const googleMapUrl = `https://www.google.com/maps?q=${lat},${long}&output=embed`;
 
