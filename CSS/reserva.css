@@ -1,5 +1,4 @@
 /* Estilos generales */
-
 *{
   margin: 0;
   padding: 0;
@@ -71,10 +70,11 @@ header {
   }
 
 
-.nav-list li a:hover {
-  background-color: #112d4e; /* Color de fondo al pasar el ratón */
-  color: #fff; /* Cambia el color del texto al pasar el ratón */
-}
+  .nav-list li a:hover {
+    background-color: #112d4e;
+    color: #fff;
+    transform: scale(1.1);
+  }
 
 
 .abrir-menu,
@@ -141,7 +141,6 @@ header {
     font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
   }
 
-
   .logo img {
     max-width: 80px;
   }
@@ -150,8 +149,6 @@ header {
     font-size: 20px;
   }
 }
-
-
 
 
 /* Estilos del Footer completo */
