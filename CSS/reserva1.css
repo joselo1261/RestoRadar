@@ -78,6 +78,7 @@ header {
   display: none; /* no se vean botones */
 }
 
+
 /* Media queries para hacer responsivo */
 @media screen and (max-width: 600px) {
   /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
@@ -145,6 +146,12 @@ header {
     font-size: 20px;
   }
 }
+
+
+
+
+
+
 
 /* Estilos del Footer completo */
 footer {
@@ -220,15 +227,15 @@ footer {
 .reserva-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: flex-start;
-  padding: 60px;
+  padding: 20px;
   border-radius: 20px;
-  margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 20px;
   max-width: auto;
-  background-color:lightgrey;
+  background-color: none;
 }
 
 .detalle-container {
@@ -238,12 +245,12 @@ footer {
   margin-bottom: 20px;
   border-radius: 20px;
   box-sizing: border-box;
-  flex: 1 1 300px;
+  flex: 1 1 100px;
   line-height: 2;
 }
 
 .detalle-container img {
-  max-width: 100%;
+  max-width: 90%;
   height: auto;
   display: block;
   margin-bottom: 20px;
@@ -252,31 +259,41 @@ footer {
 }
 
 .mapa {
-  flex: 1 1 300px;
-  width: 100%;
+  flex: 1 1 100px;
+  width: 80%;
   height: auto;
 }
 
 .mapa iframe {
-  width: 100%;
+  width: 80%;
   height: 400px;
   border: 1px solid #112d4e;
   border-radius: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
   .reserva-content {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     padding: 10px;
+    box-sizing: border-box;
   }
   .detalle-container, .mapa {
-    flex: 1 1 100%; 
-    margin-right: 0;
+    width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    margin-right: 10px;
   }
   .mapa iframe {
-    height: 200px;
+    width: 100%;
+    margin-top: 20px;
+    box-sizing: border-box;
   }
+
+
+
 }
 
 /* Contenedor de reserva */
