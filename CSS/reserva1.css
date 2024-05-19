@@ -1,22 +1,33 @@
-/* Estilos generales */
+/* General */
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-optical-sizing:auto;
+  text-decoration: none;
 }
 
-h1{
-  margin-top: 30px;
-  margin-bottom: 20px;
+
+h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
-  text-align: center;
+  font-style: normal;
+  margin: auto;
+  padding: 10px 0;
+  font-style: normal;
+  max-width: 50rem; /* Ajustado el valor máximo */
+  align-content: center;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 50px; /* Ajustado el tamaño de fuente */
+  padding-bottom: 50px;
+  overflow:visible;
 }
 
-/* Header y barra de navegacion */
 
+/* Header y barra de navegacion */
 header {
   display: flex;
   position: sticky;
@@ -30,8 +41,37 @@ header {
   padding: 2rem;
 }
 
-/* Para que se haga transparente el header */
+.logo img {
+  max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
+}
 
+.nav-list {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #333; /* Color del texto del botón */
+  padding: 10px 20px; /* Espacio alrededor del texto del botón */
+  border: 1px solid #333; /* Borde del botón */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: all 0.3s ease; /* Efecto de transición */
+}
+
+.nav-list li a:hover {
+  background-color: #112d4e; /* Color de fondo al pasar el ratón */
+  color: #fff; /* Cambia el color del texto al pasar el ratón */
+  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+}
+
+.abrir-menu,
+.cerrar-menu {
+  display: none; /* no se vean botones */
+}
+
+/* Para que se haga transparente el header */
 .transparent-header {
   background-color: rgba(224, 207, 130, 0.5); /* Color de fondo transparente */
   transition: background-color 0.3s; /* Agregar una transición suave */
@@ -45,39 +85,6 @@ header {
 .transparent-header .logo img:hover {
   opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
 }
-
-.logo img {
-  max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
-}
-
-.nav-list{
-  display: flex;
-  list-style-type: none;
-  gap: 1rem;
-
-}
-
-.nav-list li a {
-  text-decoration: none;
-  color: #333; /* Color del texto del botón */
-  padding: 10px 20px; /* Espacio alrededor del texto del botón */
-  border: 1px solid #333; /* Borde del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Efecto de transición */
-  }
-
-
-.nav-list li a:hover {
-  background-color: #112d4e; /* Color de fondo al pasar el ratón */
-  color: #fff; /* Cambia el color del texto al pasar el ratón */
-}
-
-
-.abrir-menu,
-.cerrar-menu{
-  display: none; /* no se vean botones */
-}
-
 
 /* Media queries para hacer responsivo */
 @media screen and (max-width: 600px) {
@@ -145,11 +152,10 @@ header {
   .social-icons a {
     font-size: 20px;
   }
+
+  
 }
-
-
-
-
+  
 
 
 
@@ -314,7 +320,11 @@ footer {
   margin-left: 5px;
 }
 
-
+#title {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+}
 
 .reserva-form form {
   width: 100%;
@@ -482,8 +492,13 @@ footer {
   }
 }
 
+
 @media (max-width: 600px) {
-  .h3 {
-    align-items: center;
+  #title {
+    justify-content: center;
+    align-items: center;   
+    font-size: 25px;
   }
 }
+
+

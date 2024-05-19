@@ -140,7 +140,6 @@ header {
     padding: 2rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
     max-width: 300px; /* Ancho máximo del menú desplegable */
-    width: 80%; /* Ajusta el ancho del menú */
     transition: opacity 0.3s, visibility 0.3s;
   }
 
@@ -172,6 +171,7 @@ header {
     font-size: 20px;
   }
 }
+
 
 
 /* Estilos para el Equipo */
