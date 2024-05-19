@@ -53,7 +53,7 @@ background-color: #0056b3; /* Cambia el color al pasar el ratón */
 
 
 /* Ajuste para pantallas pequeñas */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 600px) {
   .container {
     display: flex;
     flex-direction: column;
