@@ -79,7 +79,6 @@ const app = createApp({
       datos: [],
       cocina: "Todos",
       cocinas: [],
-      tarjetas: [],
       datosFiltrados: [],
       error: false,
     };
@@ -94,7 +93,6 @@ const app = createApp({
           if (data && data.restaurantes && Array.isArray(data.restaurantes)) {
             this.datos = data.restaurantes;
             this.extractUniqueValues();
-            this.generateTarjetas(); // Generamos las tarjetas completas
           } else {
             console.error("Estructura de datos no válida:", data);
           }
@@ -140,45 +138,19 @@ const app = createApp({
       this.datos.sort((a, b) => (a.name > b.name ? 1 : -1));
     },
 
-    irAreserva(restaurante) {
-      // Almacenar la tarjeta completa en el localStorage antes de redirigir a la página de reserva
-      localStorage.setItem('tarjetaSeleccionada', JSON.stringify(restaurante));
 
-      // Construir la URL de la página de reserva con los datos del restaurante como parámetros de la URL
-      const params = new URLSearchParams({
-        name: restaurante.name,
-        direccion: restaurante.direccion,
-        barrio: restaurante.barrio,
-        cocina: JSON.stringify(restaurante.cocina),
-        horario: restaurante.horario,
-        precio: restaurante.precio,
-        latitud: restaurante.latitud,
-        longitud: restaurante.longitud
-      
-      });
-      
-      const url = `../PAGES/reserva1.html?${params.toString()}`;
-      
-      // Redirigir a la página de reserva
-      window.location.href = url;
-    },
+    verDetalle(dato) {
+        console.log("Clic en tarjeta detectado.");
+        // Guardar los datos de la tarjeta seleccionada en el almacenamiento local
+        localStorage.setItem('tarjetaSeleccionada', JSON.stringify(dato));
+    
+        // Verificar que los datos se hayan almacenado correctamente
+        console.log("Datos de tarjeta seleccionada:", dato);
 
-
-    generateTarjetas() {
-      // Generar las tarjetas completas a partir de los datos
-      this.tarjetas = this.datos.map(dato => {
-        return {
-          id: dato.id,
-          name: dato.name,
-          foto: dato.foto,
-          direccion: dato.direccion,
-          barrio: dato.barrio,
-          cocina: dato.cocina,
-          horario: dato.horario,
-          precio: dato.precio,
-        };
-      });
+        // Redirigir a la página de reserva2.html
+        window.location.href = '../PAGES/reserva1.html';
     }
+
   },
 
   created() {

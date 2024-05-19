@@ -84,56 +84,63 @@ header {
 
 
 /* Media queries para hacer responsivo */
-
 @media screen and (max-width: 600px) {
   /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
-
   .abrir-menu,
-  .cerrar-menu{
-    display: block; /* Se muestre menu hamburguesa */
+  .cerrar-menu {
+    display: block;
     border: 0;
-    font-size: 1.25rem;
+    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
     background-color: transparent;
     cursor: pointer;
   }
 
-  .abrir-menu{
-    color:#1c1c1c;
+  .abrir-menu {
+    color: #1c1c1c;
   }
 
-  .cerrar-menu{
-    color:#ececec;
+  .cerrar-menu {
+    color: #ececec;
   }
 
-
-  .nav{
+  .nav {
     opacity: 0;
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end; /* Alinea el menú a la derecha */
+    justify-content: flex-end; /* Justifica el menú a la derecha */
     gap: 1rem;
     position: absolute;
-    top: 0; /* arranque arriba de la pantalla */
+    top: 100px; /* Ajuste para evitar superposición con el header */
     right: 0;
-    background-color:#112d4e;
+    background-color: #112d4e;
     padding: 2rem;
-    box-shadow: 0 0 10px 0 rgba(0,0,0, .5);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 300px; /* Ancho máximo del menú desplegable */
+    width: 80%; /* Ajusta el ancho del menú */
+    transition: opacity 0.3s, visibility 0.3s;
   }
 
-  .nav.visible{
+  .nav.visible {
     opacity: 1;
     visibility: visible;
   }
 
-  .nav-list{
+  .nav-list {
     flex-direction: column;
-    align-items: end; /* alineados a la derecha */
+    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
   }
 
-  .nav-list li a{
+  .nav-list li a {
     color: #ecececec;
   }
+
+  .nav-list li a:hover {
+    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
+    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
+  }
+
 
   .logo img {
     max-width: 80px;
@@ -143,6 +150,8 @@ header {
     font-size: 20px;
   }
 }
+
+
 
 /* Estilos del Footer completo */
 footer {
@@ -190,6 +199,7 @@ footer {
 }
 
 /* Estilos específicos para el logo del footer */
+
 .logo-footer {
   margin-bottom: 20px; /* Añadido para separar el logo del resto del contenido */
 }
@@ -279,7 +289,7 @@ footer {
 
 
 /* Media query para ajustar el diseño en pantallas pequeñas */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 600px) {
   .container {
     flex-direction: column;
     align-items: center;
@@ -428,11 +438,6 @@ footer {
 
 /* Grilla seleccion mesas */
 
-:root {
-  --numRows: 8;
-  --numCols: 5;
-}
-
 .reserva-form grid-container1 {
   display: flex;
   flex-direction: row;
@@ -524,3 +529,4 @@ h3{
     align-items: center;
   }
 }
+

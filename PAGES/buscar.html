@@ -38,9 +38,8 @@
                 <br>
             </div>
             
-            <a href="../PAGES/reserva1.html">
                 <div id="restaurantes" class="contenedor">
-                    <div v-for="(dato, index) in datosFiltrados" :key="index" class="tarjeta">
+                    <div v-for="(dato, index) in datosFiltrados" :key="index" class="tarjeta" @click="verDetalle(dato)">
                         <h3>{{dato.name}}</h3>
                         <p><img :src="dato.foto" alt="Foto del restaurante"></p>
                         <p><strong>Direccion: </strong> {{dato.direccion}}</p>
@@ -54,14 +53,12 @@
                         <p><strong>Precio: </strong> {{dato.precio}}</p>
                     </div>
                 </div>
-            </a>
         </div>
 
     </main>
 
     <footer>
     </footer>
-    </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="../JS/buscar.js"></script>

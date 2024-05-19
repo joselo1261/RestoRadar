@@ -8,12 +8,13 @@ document.querySelector("header").innerHTML = `
     <nav class="nav" id="nav">
       <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
       <ul class="nav-list">
-        <li><a href="./buscar1.html">Buscar</a>
+        <li>
+          <a href="./buscar.html">Buscar</a>
         </li>
         <li>
           <a href="../index.html">Inicio</a>
         </li>
-        </ul>
+      </ul>
     </nav>
 `;
 
