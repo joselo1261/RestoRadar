@@ -1,15 +1,13 @@
 /* General */
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-optical-sizing:auto;
+  font-optical-sizing: auto;
   text-decoration: none;
 }
-
 
 h1 {
   font-family: "Poppins", sans-serif;
@@ -18,22 +16,21 @@ h1 {
   margin: auto;
   padding: 10px 0;
   font-style: normal;
-  max-width: 50rem; /* Ajustado el valor máximo */
+  max-width: 50rem;
   align-content: center;
   color: rgba(0, 0, 0, 0.75);
-  font-size: 50px; /* Ajustado el tamaño de fuente */
+  font-size: 50px;
   padding-bottom: 50px;
-  overflow:visible;
+  overflow: visible;
 }
-
 
 /* Header y barra de navegacion */
 header {
   display: flex;
   position: sticky;
-  top: 0; /* Fijar en la parte superior */
-  z-index: 1000; /* Alto valor de z-index */
-  height: 100px; /* Altura deseada */
+  top: 0;
+  z-index: 1000;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ccc;
@@ -42,7 +39,7 @@ header {
 }
 
 .logo img {
-  max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
+  max-width: 6rem;
 }
 
 .nav-list {
@@ -53,47 +50,47 @@ header {
 
 .nav-list li a {
   text-decoration: none;
-  color: #333; /* Color del texto del botón */
-  padding: 10px 20px; /* Espacio alrededor del texto del botón */
-  border: 1px solid #333; /* Borde del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Efecto de transición */
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .nav-list li a:hover {
-  background-color: #112d4e; /* Color de fondo al pasar el ratón */
-  color: #fff; /* Cambia el color del texto al pasar el ratón */
-  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  background-color: #112d4e;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .abrir-menu,
 .cerrar-menu {
-  display: none; /* no se vean botones */
+  display: none;
 }
 
 /* Para que se haga transparente el header */
 .transparent-header {
-  background-color: rgba(224, 207, 130, 0.5); /* Color de fondo transparente */
-  transition: background-color 0.3s; /* Agregar una transición suave */
+  background-color: rgba(224, 207, 130, 0.5);
+  transition: background-color 0.3s;
 }
 
 .transparent-header .logo img {
-  opacity: 0.7; /* Cambiar la opacidad del logo */
-  transition: opacity 0.3s ease; /* Agregar una transición suave */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .transparent-header .logo img:hover {
-  opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
+  opacity: 1;
 }
+
 
 /* Media queries para hacer responsivo */
 @media screen and (max-width: 600px) {
-  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
   .abrir-menu,
   .cerrar-menu {
     display: block;
     border: 0;
-    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
+    font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
   }
@@ -111,17 +108,17 @@ header {
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea el menú a la derecha */
-    justify-content: flex-end; /* Justifica el menú a la derecha */
+    align-items: flex-end;
+    justify-content: flex-end;
     gap: 1rem;
     position: absolute;
-    top: 100px; /* Ajuste para evitar superposición con el header */
+    top: 100px;
     right: 0;
     background-color: #112d4e;
     padding: 2rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    max-width: 300px; /* Ancho máximo del menú desplegable */
-    width: 80%; /* Ajusta el ancho del menú */
+    max-width: 300px;
+    width: 80%;
     transition: opacity 0.3s, visibility 0.3s;
   }
 
@@ -132,18 +129,17 @@ header {
 
   .nav-list {
     flex-direction: column;
-    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
+    align-items: flex-end;
   }
 
   .nav-list li a {
-    color: #ecececec;
+    color: #ececec;
   }
 
   .nav-list li a:hover {
-    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
-    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
+    color: #E0CF82;
+    font-size: 24px;
   }
-
 
   .logo img {
     max-width: 80px;
@@ -152,12 +148,7 @@ header {
   .social-icons a {
     font-size: 20px;
   }
-
-  
 }
-  
-
-
 
 /* Estilos del Footer completo */
 footer {
@@ -172,26 +163,26 @@ footer {
 }
 
 .social-icons {
-  margin-bottom: 10px; /* Agregado para separar los íconos de contacto */
+  margin-bottom: 10px;
 }
 
 .social-icons a {
   font-size: 20px;
   margin-right: 20px;
   color: #fff;
-  transition: font-size 0.5s; /* Cambiado a 'font-size' */
+  transition: font-size 0.5s;
 }
 
 .social-icons a:hover {
   color: #E0CF82;
-  font-size: 24px; /* Aumenta el tamaño al pasar el mouse */
+  font-size: 24px;
 }
 
 .contacto a {
   text-decoration: none;
   color: whitesmoke;
   margin-top: 10px;
-  display: block; /* Hace que los enlaces se muestren como bloques */
+  display: block;
 }
 
 .contacto a:hover {
@@ -205,9 +196,8 @@ footer {
 }
 
 /* Estilos específicos para el logo del footer */
-
 .logo-footer {
-  margin-bottom: 20px; /* Añadido para separar el logo del resto del contenido */
+  margin-bottom: 20px;
 }
 
 .logo-footer img {
@@ -217,19 +207,15 @@ footer {
   opacity: 0.6;
 }
 
-
 /* ----- Colocar logo en el footer ------ */
-
 .logo-container {
   display: flex;
-  align-items: center; /* Centra verticalmente el logo */
-  justify-content: center; /* Centra horizontalmente el logo */
+  align-items: center;
+  justify-content: center;
 }
-
 
 /* Estilos del contenedor de reserva */
 /* Contenido de reserva */
-
 .reserva-content {
   display: flex;
   flex-wrap: wrap;
@@ -287,7 +273,7 @@ footer {
     box-sizing: border-box;
   }
   .detalle-container, .mapa {
-    width: 100%; 
+    width: 100%;
     box-sizing: border-box;
     margin: 0;
     margin-right: 10px;
@@ -297,13 +283,9 @@ footer {
     margin-top: 20px;
     box-sizing: border-box;
   }
-
-
-
 }
 
 /* Contenedor de reserva */
-
 .container-reserva {
   display: flex;
   flex-direction: row;
@@ -312,18 +294,17 @@ footer {
 }
 
 /* Formulario de reserva */
-/* Estilos para el nombre del restaurante en el formulario de reserva */
 #restElegido {
-  font-size: 1.0em; /* Tamaño de fuente */
-  font-weight: bold; /* Grosor de la fuente */
-  color: white;/* Color del texto */
+  font-size: 1.0em;
+  font-weight: bold;
+  color: white;
   margin-left: 5px;
 }
 
 #title {
   display: flex;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente */
+  justify-content: center;
+  align-items: center;
 }
 
 .reserva-form form {
@@ -361,7 +342,6 @@ footer {
 }
 
 /* Estilos para los campos de entrada */
-
 .reserva-form input[type="text"],
 .reserva-form input[type="tel"],
 .reserva-form input[type="date"],
@@ -421,7 +401,6 @@ footer {
 }
 
 /* Grilla seleccion mesas */
-
 .grid-container1 {
   display: grid;
   grid-template-columns: repeat(var(--numCols), 1fr);
@@ -492,13 +471,11 @@ footer {
   }
 }
 
-
 @media (max-width: 600px) {
   #title {
     justify-content: center;
-    align-items: center;   
+    align-items: center;
     font-size: 25px;
   }
 }
-
 
