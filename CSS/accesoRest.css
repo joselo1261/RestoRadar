@@ -137,6 +137,23 @@ header {
   .social-icons a {
     font-size: 20px;
   }
+
+  .radio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+  }
+
+
+  .radio input[type="radio"] {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+  }
+
 }
 
 
