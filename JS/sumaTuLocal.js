@@ -144,9 +144,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const file = imageInput.files[0];
     if (file) {
       const fileType = file.type;
-    	const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
-      	if (!validImageTypes.includes(fileType)) {
-        	showError('imagen', 'Por favor, sube un archivo de imagen válido (JPEG, JPG, PNG, GIF).');
+      const validImageTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+      if (!validImageTypes.includes(fileType)) {
+        showError('imagen', 'Por favor, sube un archivo de imagen válido (JPEG, JPG, PNG, GIF).');
         isValid = false;
       }
     } else {
@@ -225,3 +225,5 @@ function login() {
     document.getElementById("password").value = "";
   }
 }
+
+
