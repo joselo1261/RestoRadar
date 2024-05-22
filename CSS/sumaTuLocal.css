@@ -86,7 +86,8 @@ header {
 }
 
 /* Media queries para hacer responsivo */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) { */
+  @media screen and (max-width: 850px) {
   /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
   .abrir-menu,
   .cerrar-menu {
@@ -152,7 +153,6 @@ header {
     font-size: 20px;
   }
 }
-
 
 /* Estilos del Footer completo */
 footer {
@@ -225,77 +225,128 @@ footer {
 /*  ----------- Area formulario ------------------ */
 
 .encabezado{
- background-color:  #112d4e;
- height: 5rem; 
- margin-top: 1rem;
- display: flex;
- justify-content: center;
- align-items: center; 
+  background-color:  #112d4e;
+  height: 5rem; 
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
 }
 
 #loginform{
   color: black;
   vertical-align: top;
-
 }
 
 .wrap-encabezado h2{
-    padding: .2rem;
+  padding: .2rem;
 }
 
 .section{
-    max-width: 1200px;
-    margin: 1rem auto;
-    padding: 1rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+  padding: 1rem;
 }
 
 .wrap-two-column{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
 }
 
 h2{
-   background-color: #E0CF82; 
+  background-color: #E0CF82; 
 }
+
+.table-container{
+  display: flex;
+  justify-content: center;
+}
+
+p{
+  text-align: center;
+}
+
 td, th{
-    padding: .7rem .7rem;
-    font-size: 1.1rem;
-    text-align: center;
+  padding: .7rem .7rem;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 th{
- color: rgb(126, 34, 34);   
+  color: rgb(126, 34, 34);   
 }
 
 td{
-color: #112d4e;
+  color: #112d4e;
 }
 
 th:first-child,
 td:first-child {
-    text-align: left;
+  text-align: left;
 }
 
 .formulario{
-    display: flex;
-    flex-flow: column;
-    flex-wrap: wrap;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
 }
 
-.formulario input, textarea{
-    margin: .5rem 0;
-    padding: .2rem .2rem;
 
+.formulario input, .formulario textarea, .custom-file-label, .formulario .custom-file-input {
+  margin: .5rem 0;
+  padding: .2rem .2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
-.formulario button,  #loginform {
-    width: fit-content;
-    padding: .5rem 1rem;
-    background-color:#e0cf82;
-    border: 1px solid #333;
-    border-radius: 5px  ;
+.formulario button, #loginform {
+  width: fit-content;
+  padding: .5rem 1rem;
+  background-color:#e0cf82;
+  border: 1px solid #333;
+  border-radius: 5px;
+}
 
+.custom-file-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Poppins", sans-serif;
+  font-size: small;
+  font-weight: 300;
+}
+
+.custom-file-label {
+  flex: 1;
+  padding: .2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin-right: .5rem;
+  text-align: center;
+}
+
+.custom-file-input {
+  display: none;
+}
+
+.custom-file-button {
+  padding: .5rem 1rem;
+  background-color: #e0cf82;
+  border: 1px solid #333;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.custom-file-button:hover {
+  background-color: #d1b875;
+}
+
+.file-name {
+  margin-right: .5rem;
+  padding: .5rem .5rem .5rem .2rem;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
 h3{
@@ -314,8 +365,9 @@ color: #112d4e;
   color: #112d4e;
 }
 
-@media (max-width:800px){
+  @media screen and (max-width: 1100px){
     .wrap-two-column{
         grid-template-columns: 1fr;
+        justify-content: center;
     }
-}
+  }

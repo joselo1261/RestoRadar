@@ -68,11 +68,13 @@
               </tbody>
             </table>
           </div>
-          <p>
-            Te ofrecemos distintas modalidades para que cuentes con la mejor
-            opción para tu establecimiento de comida
-          </p>
-          <p>Para mas información, contactanos completando el formulario</p>
+          <div class="table-p">
+            <p>
+              Te ofrecemos distintas modalidades para que cuentes con la mejor
+              opción para tu establecimiento de comida
+            </p>
+            <p>Para mas información, contactanos completando el formulario</p>
+          </div>
         </div>
         <div class="column-half">
           <h3>Formulario de Contacto</h3>
@@ -83,8 +85,13 @@
             <input type="text" placeholder="Razon Social" id="razonSocial" required />
             <input type="text" placeholder="Telefono Contacto (xxx)xxxxxxxx" id="telefono" required />
             <input type="text" placeholder="Correo electrónico" id="email" required />
-            <textarea name="textarea" placeholder="Escriba su consulta aquí" id="consulta" rows="4" cols="50"></textarea>
-
+            <div class="custom-file-wrapper">
+              <span class="file-name" id="fileName">Enviar una imagen de su Local</span>
+              <label for="imagen" class="custom-file-button">Seleccionar Archivo</label>
+              <input type="file" id="imagen" accept="image/*" required class="custom-file-input">
+            </div>
+            <textarea name="textarea" placeholder="Escriba su consulta aquí" id="consulta" rows="4"
+              cols="50"></textarea>
             <span>
               <button type="submit">Enviar</button>
               <button type="reset">Borrar</button>
