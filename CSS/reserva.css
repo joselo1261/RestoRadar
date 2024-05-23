@@ -19,13 +19,12 @@ h1{
 
 
 /* Header y barra de navegacion */
-
 header {
   display: flex;
   position: sticky;
-  top: 0; /* Fijar en la parte superior */
-  z-index: 1000; /* Alto valor de z-index */
-  height: 100px; /* Altura deseada */
+  top: 0;
+  z-index: 1000;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ccc;
@@ -36,21 +35,21 @@ header {
 /* Para que se haga transparente el header */
 
 .transparent-header {
-  background-color: rgba(224, 207, 130, 0.5); /* Color de fondo transparente */
-  transition: background-color 0.3s; /* Agregar una transición suave */
+  background-color: rgba(224, 207, 130, 0.5);
+  transition: background-color 0.3s;
 }
 
 .transparent-header .logo img {
-  opacity: 0.7; /* Cambiar la opacidad del logo */
-  transition: opacity 0.3s ease; /* Agregar una transición suave */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .transparent-header .logo img:hover {
-  opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
+  opacity: 1;
 }
 
 .logo img {
-  max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
+  max-width: 6rem;
 }
 
 .nav-list{
@@ -62,12 +61,12 @@ header {
 
 .nav-list li a {
   text-decoration: none;
-  color: #333; /* Color del texto del botón */
-  padding: 10px 20px; /* Espacio alrededor del texto del botón */
-  border: 1px solid #333; /* Borde del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Efecto de transición */
-  }
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
 
 
   .nav-list li a:hover {
@@ -79,18 +78,17 @@ header {
 
 .abrir-menu,
 .cerrar-menu{
-  display: none; /* no se vean botones */
+  display: none;
 }
 
 
 /* Media queries para hacer responsivo */
-@media screen and (max-width: 600px) {
-  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+@media screen and (max-width: 600px) { /* Para celulares */
   .abrir-menu,
   .cerrar-menu {
     display: block;
     border: 0;
-    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
+    font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
   }
@@ -108,17 +106,17 @@ header {
     visibility: hidden;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Alinea el menú a la derecha */
-    justify-content: flex-end; /* Justifica el menú a la derecha */
+    align-items: flex-end;
+    justify-content: flex-end;
     gap: 1rem;
     position: absolute;
-    top: 100px; /* Ajuste para evitar superposición con el header */
+    top: 100px;
     right: 0;
     background-color: #112d4e;
     padding: 2rem;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    max-width: 300px; /* Ancho máximo del menú desplegable */
-    width: 80%; /* Ajusta el ancho del menú */
+    max-width: 300px;
+    width: 80%;
     transition: opacity 0.3s, visibility 0.3s;
   }
 
@@ -129,7 +127,7 @@ header {
 
   .nav-list {
     flex-direction: column;
-    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
+    align-items: flex-end;
   }
 
   .nav-list li a {
@@ -137,8 +135,8 @@ header {
   }
 
   .nav-list li a:hover {
-    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
-    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
+    color:#E0CF82;
+    font-size: 24px;
   }
 
   .logo img {
@@ -164,26 +162,26 @@ footer {
 }
 
 .social-icons {
-  margin-bottom: 10px; /* Agregado para separar los íconos de contacto */
+  margin-bottom: 10px;
 }
 
 .social-icons a {
   font-size: 20px;
   margin-right: 20px;
   color: #fff;
-  transition: font-size 0.5s; /* Cambiado a 'font-size' */
+  transition: font-size 0.5s;
 }
 
 .social-icons a:hover {
   color: #E0CF82;
-  font-size: 24px; /* Aumenta el tamaño al pasar el mouse */
+  font-size: 24px;
 }
 
 .contacto a {
   text-decoration: none;
   color: whitesmoke;
   margin-top: 10px;
-  display: block; /* Hace que los enlaces se muestren como bloques */
+  display: block;
 }
 
 .contacto a:hover {
@@ -199,7 +197,7 @@ footer {
 /* Estilos específicos para el logo del footer */
 
 .logo-footer {
-  margin-bottom: 20px; /* Añadido para separar el logo del resto del contenido */
+  margin-bottom: 20px;
 }
 
 .logo-footer img {
@@ -214,8 +212,8 @@ footer {
 
 .logo-container {
   display: flex;
-  align-items: center; /* Centra verticalmente el logo */
-  justify-content: center; /* Centra horizontalmente el logo */
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -284,34 +282,6 @@ footer {
   margin-left: 20px;
 }
 
-
-
-/* Media query para ajustar el diseño en pantallas pequeñas */
-@media screen and (max-width: 600px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .imagen,
-  .mapa {
-    width: 60%; 
-    margin-bottom: 20px;
-  }
-
-  .mapa {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .mapa iframe {
-    height: 300px;
-  }
-
-
-}
-
 /* Estilos para el contenedor de las reservas (form y mesas) */
 
 .container-reserva{
@@ -332,8 +302,8 @@ footer {
   border-radius: 20px; 
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); 
   position: relative; 
-  overflow: hidden; /* Oculta el desbordamiento de los elementos internos */
-  margin-right: 10px; /* Añadir margen derecho */
+  overflow: hidden;
+  margin-right: 10px;
 }
 
 /* Borde animado */
@@ -344,27 +314,27 @@ footer {
   left: -20px;
   right: -20px;
   bottom: -20px;
-  border-radius: 50%; /* Crea un borde circular */
+  border-radius: 50%;
   z-index: -1; 
-  background-color: #E0CF82; /* Color de fondo */
+  background-color: #E0CF82;
   animation: pulse-border 3s infinite alternate;
 }
 
 /* Estilos para el nombre del restaurante en el formulario de reserva */
 #restElegido {
-  font-size: 1.0em; /* Tamaño de fuente */
-  font-weight: bold; /* Grosor de la fuente */
-  color: white;/* Color del texto */
+  font-size: 1.0em;
+  font-weight: bold;
+  color: white;
   margin-left: 5px;
 }
 
 /* Animación del borde */
 @keyframes pulse-border {
   0% {
-    transform: scale(1); /* Tamaño normal */
+    transform: scale(1);
   }
   100% {
-    transform: scale(1.3); /* Escala aumentada */
+    transform: scale(1.3);
   }
 }
 
@@ -382,7 +352,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.4);
   color: #FFFFFF;
   font-size: 18px;
-  transition: background-color 0.3s, transform 0.3s;/* Agrega una transición suave */
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 /* Estilos cuando se enfoca el campo */
@@ -392,13 +362,13 @@ footer {
 .reserva-form input[type="time"]:focus,
 .reserva-form select:focus {
   background-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-7px);/* Mueve ligeramente hacia arriba */
+  transform: translateY(-7px);
 }
 
 /* Estilos para los elementos option */
 .reserva-form select option {
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo del elemento option */
-  color: black; /* Color del texto del elemento option */
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
 }
 
 /* Estilos para las etiquetas */
@@ -406,7 +376,7 @@ footer {
   display: block;
   margin-top: 20px;
   font-size: 18px;
-  color: #E0CF82; /* Color de texto */
+  color: #E0CF82;
 }
 
 /* Estilos para el botón de enviar */
@@ -420,7 +390,7 @@ footer {
   padding: 15px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s; /* Agrega una transición suave */
+  transition: background-color 0.3s, transform 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -428,8 +398,8 @@ footer {
 
 /* Estilos para el botón de enviar al pasar el mouse */
 .reserva-form input[type="submit"]:hover {
-  background-color: #ff8000; /* Cambia el color de fondo al pasar el mouse */
-  transform: scale(1.1); /* Escala ligeramente el botón */
+  background-color: #ff8000;
+  transform: scale(1.1);
 }
 
 
@@ -450,13 +420,13 @@ h3{
 
 .grid-container1 {
   display: grid;
-  grid-template-columns: repeat(var(--numCols), 1fr); /* Utiliza la variable --numCols */
-  grid-template-rows: repeat(var(--numRows), 1fr); /* Utiliza la variable --numRows */
+  grid-template-columns: repeat(var(--numCols), 1fr);
+  grid-template-rows: repeat(var(--numRows), 1fr);
   max-width: 300px;
   gap: 10px;
   margin-top: 20px;
   margin-bottom: 50px;
-  margin-left: 50px; /* Margen izquierdo */
+  margin-left: 50px;
 }
 
 .grid-item {
@@ -468,11 +438,11 @@ h3{
 }
 
 .grid-item.selected .number {
-  color: white; /* Cambiar a blanco cuando se selecciona */
+  color: white;
 }
 
 .grid-container1 .grid-item.selected {
-  background-color: red !important; /* Cambia el color cuando se selecciona */
+  background-color: red !important;
 }
 
 .square-image {
@@ -507,18 +477,43 @@ h3{
   border-radius: 5px;
 }
 
-/* Media queries para hacer responsivo */
-@media screen and (max-width: 600px) {
-  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+/* Media query para ajustar el diseño en pantallas pequeñas */
+@media screen and (max-width: 600px) { /* Para celulares */
+  .container {
+    flex-direction: column;
+    align-items: center;    
+  }
+
+  .imagen,
+  .mapa {
+    width: 100%; 
+    margin-bottom: 20px;
+  }
+
+  .mapa {
+    max-width: 100%;
+    display: block;
+    margin: 20 auto;
+    align-items: left;
+  }
+
+  .mapa iframe {
+    height: 300px;
+
+  }
+
+
+}
+
+@media screen and (max-width: 600px) { /* Para celulares */
   .reserva-form form {
-    width: 80%; /* Ancho del formulario en dispositivos móviles */
+    width: 100%;
   }
 }
 
 @media (max-width: 600px) {
   .grid-container1 {
-    max-width: 50%;
-    margin-left: 150px;
+    max-width: 80%;
   }
 }
 
@@ -527,4 +522,3 @@ h3{
     align-items: center;
   }
 }
-
