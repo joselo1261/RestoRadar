@@ -285,6 +285,11 @@ footer {
 
 @media screen and (max-width: 768px) { /* Para tabletes */
   .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     margin-left: 10px;
     margin-right: 10px;
   }
