@@ -1,5 +1,4 @@
 /* General */
-
 *{
   margin: 0;
   padding: 0;
@@ -10,7 +9,7 @@
   text-decoration: none;
 }
 
-
+/* Titulo de la Pagina */
 h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
@@ -18,15 +17,15 @@ h1 {
   margin: auto;
   padding: 10px 0;
   font-style: normal;
-  max-width: 50rem; /* Ajustado el valor máximo */
+  max-width: 50rem;
   align-content: center;
   color: rgba(0, 0, 0, 0.75);
-  font-size: 50px; /* Ajustado el tamaño de fuente */
+  font-size: 50px;
   padding-bottom: 50px;
   overflow:visible;
 }
 
-
+/* Textos de la Pagina */
 h2 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -50,9 +49,9 @@ h2 {
 header {
   display: flex;
   position: sticky;
-  top: 0; /* Fijar en la parte superior */
-  z-index: 1000; /* Alto valor de z-index */
-  height: 100px; /* Altura deseada */
+  top: 0;
+  z-index: 1000;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ccc;
@@ -61,7 +60,7 @@ header {
 }
 
 .logo img {
-  max-width: 6rem; /* Ajusta el tamaño máximo del logo según tu diseño */
+  max-width: 6rem;
 }
 
 .nav-list {
@@ -72,110 +71,40 @@ header {
 
 .nav-list li a {
   text-decoration: none;
-  color: #333; /* Color del texto del botón */
-  padding: 10px 20px; /* Espacio alrededor del texto del botón */
-  border: 1px solid #333; /* Borde del botón */
-  border-radius: 5px; /* Bordes redondeados */
-  transition: all 0.3s ease; /* Efecto de transición */
+  color: #333;
+  padding: 10px 20px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .nav-list li a:hover {
-  background-color: #112d4e; /* Color de fondo al pasar el ratón */
-  color: #fff; /* Cambia el color del texto al pasar el ratón */
-  transform: scale(1.1); /* Aumenta el tamaño al pasar el mouse */
+  background-color: #112d4e;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 .abrir-menu,
 .cerrar-menu {
-  display: none; /* no se vean botones */
+  display: none;
 }
 
 /* Para que se haga transparente el header */
 .transparent-header {
-  background-color: rgba(224, 207, 130, 0.5); /* Color de fondo transparente */
-  transition: background-color 0.3s; /* Agregar una transición suave */
+  background-color: rgba(224, 207, 130, 0.5);
+  transition: background-color 0.3s;
 }
 
 .transparent-header .logo img {
-  opacity: 0.7; /* Cambiar la opacidad del logo */
-  transition: opacity 0.3s ease; /* Agregar una transición suave */
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
 .transparent-header .logo img:hover {
-  opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
+  opacity: 1;
 }
-
-/* Media queries para hacer responsivo */
-@media screen and (max-width: 600px) {
-  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
-  .abrir-menu,
-  .cerrar-menu {
-    display: block;
-    border: 0;
-    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .abrir-menu {
-    color: #1c1c1c;
-  }
-
-  .cerrar-menu {
-    color: #ececec;
-  }
-
-  .nav {
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinea el menú a la derecha */
-    justify-content: flex-end; /* Justifica el menú a la derecha */
-    gap: 1rem;
-    position: absolute;
-    top: 100px; /* Ajuste para evitar superposición con el header */
-    right: 0;
-    background-color: #112d4e;
-    padding: 2rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    max-width: 300px; /* Ancho máximo del menú desplegable */
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  .nav.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
-  }
-
-  .nav-list li a {
-    color: #ecececec;
-  }
-
-  .nav-list li a:hover {
-    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
-    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
-  }
-
-
-  .logo img {
-    max-width: 80px;
-  }
-
-  .social-icons a {
-    font-size: 20px;
-  }
-}
-
-
 
 /* Estilos para el Equipo */
-
 .equipo {
   background-color: #f0f0f0;
   padding: 20px 0;
@@ -221,26 +150,26 @@ footer {
 }
 
 .social-icons {
-  margin-bottom: 10px; /* Agregado para separar los íconos de contacto */
+  margin-bottom: 10px;
 }
 
 .social-icons a {
   font-size: 20px;
   margin-right: 20px;
   color: #fff;
-  transition: font-size 0.5s; /* Cambiado a 'font-size' */
+  transition: font-size 0.5s;
 }
 
 .social-icons a:hover {
   color: #E0CF82;
-  font-size: 24px; /* Aumenta el tamaño al pasar el mouse */
+  font-size: 24px;
 }
 
 .contacto a {
   text-decoration: none;
   color: whitesmoke;
   margin-top: 10px;
-  display: block; /* Hace que los enlaces se muestren como bloques */
+  display: block;
 }
 
 .contacto a:hover {
@@ -256,7 +185,7 @@ footer {
 
 /* Estilos específicos para el logo del footer */
 .logo-footer {
-  margin-bottom: 20px; /* Añadido para separar el logo del resto del contenido */
+  margin-bottom: 20px;
 }
 
 .logo-footer img {
@@ -267,11 +196,10 @@ footer {
 }
 
 /* ----- Colocar logo en el footer ------ */
-
 .logo-container {
   display: flex;
-  align-items: center; /* Centra verticalmente el logo */
-  justify-content: center; /* Centra horizontalmente el logo */
+  align-items: center;
+  justify-content: center;
 }
 
 
@@ -279,32 +207,32 @@ footer {
 .carousel-container {
   overflow: hidden;
   width: 100%;
-  max-width: 100%; /* Ancho máximo de la pantalla */
+  max-width: 100%;
   position: relative;
   background-color: grey;
   display: flex;
-  align-items: center; /* Centrar verticalmente */
+  align-items: center;
 }
 
 .carousel-inner {
   display: flex;
-  flex-wrap: nowrap; /* Evita que las imágenes se envuelvan */
+  flex-wrap: nowrap;
   animation: scroll 40s linear infinite;
   padding: 10px;
 }
 
 .carousel-slide {
   flex: 0 0 auto;
-  margin-right: 10px; /* Margen a la derecha de cada imagen */
-  max-height: 200px; /* Altura máxima deseada para las imágenes */
+  margin-right: 10px;
+  max-height: 200px;
   display: flex;
-  justify-content: center; /* Centrar horizontalmente */
+  justify-content: center;
 }
 
 .carousel-slide img {
-  max-height: 100%; /* Ajustar la altura de la imagen */
-  max-width: 100%; /* Ajustar el ancho de la imagen */
-  object-fit: contain; /* Ajustar imagen dentro del contenedor */
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* Animación del carrusel */
@@ -322,3 +250,100 @@ footer {
   animation-play-state: paused;
 }
 
+
+/* Media queries para hacer responsivo */
+@media screen and (max-width: 600px) { /* Para Celulares */
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .abrir-menu {
+    color: #1c1c1c;
+  }
+
+  .cerrar-menu {
+    color: #ececec;
+  }
+
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 1rem;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background-color: #112d4e;
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 300px;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .nav-list li a {
+    color: #ecececec;
+  }
+
+  .nav-list li a:hover {
+    color:#E0CF82;
+    font-size: 24px;
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) { /* Para Tablets */
+  h1 {
+    font-size: 40px;
+  }
+
+  .nav-list li a {
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 900px) { /* Para pantallas pequeñas */
+  header {
+    flex-direction: row;
+    padding: 1rem;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .nav-list li a {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .logo img {
+    max-width: 5rem;
+  }
+}
