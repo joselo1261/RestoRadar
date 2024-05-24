@@ -1,22 +1,6 @@
 {
   "restaurantes": [
   {
-    "id":"resto0001",
-    "name": "La Cabrera",
-    "logo": "https://www.lacabrera.com.ar/img/logo-la-cabrera.png",
-    "website": "https://www.lacabrera.com.ar",
-    "foto": "https://www.lacabrera.com.ar/img/stores/pilar-7237-n.jpg",
-    "direccion":"José A. Cabrera 5127, Cdad. Autónoma de Buenos Aires",
-    "barrio":"Palermo Soho",
-    "cocina": ["Parrilla","Churrasqueria","Latina"],
-    "horario":"11:30 a 16:00 - 18:30 a 1:00",
-    "precio":"$$-$$$",
-    "latitud":-34.58889,
-    "longitud":-58.43327,
-    "capacidad":50
-  
-  },
-  {
     "id":"resto0002",
     "name": "Sushi Club",
     "logo": "https://www.sushiclub.com.ar/gfx/web-sushiclub2_black.png?c=2",
@@ -47,21 +31,6 @@
     "capacidad":38
   },
   {
-    "id":"resto0004",
-    "name": "Banchero",
-    "logo": "https://media-cdn.tripadvisor.com/media/photo-s/19/fe/1b/07/pizzeria-banchero.jpg",
-    "website": "https://www.facebook.com/pizzeriabanchero/",
-    "foto": "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/e5/4a/e8/salon.jpg",
-    "direccion":"Av. Corrientes 1300, Cdad. Autónoma de Buenos Aires",
-    "barrio":"Microcentro",
-    "cocina": ["Pizzeria"],
-    "horario":"11:00 a 01:00",
-    "precio":"$$-$$$",
-    "latitud":-34.60393,
-    "longitud":-58.38501,
-    "capacidad":42
-  },
-  {
     "id":"resto0005",
     "name": "Osaka",
     "logo": "https://admin.osakanikkei.com/uploads/site/logo.svg",
@@ -90,6 +59,38 @@
     "latitud":-34.58953,
     "longitud":-58.38211,
     "capacidad":40
+  },
+  {
+    "id":"resto0004",
+    "name": "Banchero",
+    "logo": "https://media-cdn.tripadvisor.com/media/photo-s/19/fe/1b/07/pizzeria-banchero.jpg",
+    "website": "https://www.facebook.com/pizzeriabanchero/",
+    "foto": "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/e5/4a/e8/salon.jpg",
+    "direccion":"Av. Corrientes 1300, Cdad. Autónoma de Buenos Aires",
+    "barrio":"Microcentro",
+    "cocina": ["Pizzeria"],
+    "horario":"11:00 a 01:00",
+    "precio":"$$-$$$",
+    "latitud":-34.60393,
+    "longitud":-58.38501,
+    "capacidad":42
+  },
+  
+  {
+    "id":"resto0001",
+    "name": "La Cabrera",
+    "logo": "https://www.lacabrera.com.ar/img/logo-la-cabrera.png",
+    "website": "https://www.lacabrera.com.ar",
+    "foto": "https://www.lacabrera.com.ar/img/stores/pilar-7237-n.jpg",
+    "direccion":"José A. Cabrera 5127, Cdad. Autónoma de Buenos Aires",
+    "barrio":"Palermo Soho",
+    "cocina": ["Parrilla","Churrasqueria","Latina"],
+    "horario":"11:30 a 16:00 - 18:30 a 1:00",
+    "precio":"$$-$$$",
+    "latitud":-34.58889,
+    "longitud":-58.43327,
+    "capacidad":50
+  
   },
   {
     "id":"resto0007",

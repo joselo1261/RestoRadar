@@ -21,7 +21,7 @@ h1 {
       max-width: 50rem;
       align-content: center;
       color: rgba(0, 0, 0, 0.75);
-      size: 50px;
+      font-size: 2rem;
       padding-bottom: 50px;
 }
 
@@ -83,75 +83,6 @@ header {
 
 .transparent-header .logo img:hover {
   opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
-}
-
-/* Media queries para hacer responsivo */
-/* @media screen and (max-width: 600px) { */
-  @media screen and (max-width: 850px) {
-  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
-  .abrir-menu,
-  .cerrar-menu {
-    display: block;
-    border: 0;
-    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  .abrir-menu {
-    color: #1c1c1c;
-  }
-
-  .cerrar-menu {
-    color: #ececec;
-  }
-
-  .nav {
-    opacity: 0;
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinea el menú a la derecha */
-    justify-content: flex-end; /* Justifica el menú a la derecha */
-    gap: 1rem;
-    position: absolute;
-    top: 100px; /* Ajuste para evitar superposición con el header */
-    right: 0;
-    background-color: #112d4e;
-    padding: 2rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    max-width: 300px; /* Ancho máximo del menú desplegable */
-    width: 80%; /* Ajusta el ancho del menú */
-    transition: opacity 0.3s, visibility 0.3s;
-  }
-
-  .nav.visible {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
-  }
-
-  .nav-list li a {
-    color: #ecececec;
-  }
-
-  .nav-list li a:hover {
-    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
-    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
-  }
-
-
-  .logo img {
-    max-width: 80px;
-  }
-
-  .social-icons a {
-    font-size: 20px;
-  }
 }
 
 /* Estilos del Footer completo */
@@ -219,9 +150,6 @@ footer {
   justify-content: center; /* Centra horizontalmente el logo */
 }
 
-
-
-
 /*  ----------- Area formulario ------------------ */
 
 .encabezado{
@@ -233,7 +161,7 @@ footer {
   align-items: center; 
 }
 
-#loginform{
+#loginform {
   color: black;
   vertical-align: top;
 }
@@ -291,7 +219,6 @@ td:first-child {
   flex-flow: column;
   flex-wrap: wrap;
 }
-
 
 .formulario input, .formulario textarea, .custom-file-label, .formulario .custom-file-input {
   margin: .5rem 0;
@@ -366,9 +293,129 @@ color: #112d4e;
   color: #112d4e;
 }
 
-  @media screen and (max-width: 1100px){
-    .wrap-two-column{
-        grid-template-columns: 1fr;
-        justify-content: center;
-    }
+/* Media queries para hacer responsivo */
+
+@media screen and (max-width: 1100px){
+  .wrap-two-column{
+      grid-template-columns: 1fr;
+      justify-content: center;
   }
+}
+
+  @media screen and (max-width: 850px) {
+  /* Ajuste de estilos para pantallas más pequeñas, por ejemplo, dispositivos móviles */
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 2rem; /* Ajuste del tamaño del botón de menú */
+    background-color: transparent;
+    cursor: pointer;
+  }
+
+  .abrir-menu {
+    color: #1c1c1c;
+  }
+
+  .cerrar-menu {
+    color: #ececec;
+  }
+
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinea el menú a la derecha */
+    justify-content: flex-end; /* Justifica el menú a la derecha */
+    gap: 1rem;
+    position: absolute;
+    top: 100px; /* Ajuste para evitar superposición con el header */
+    right: 0;
+    background-color: #112d4e;
+    padding: 2rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 300px; /* Ancho máximo del menú desplegable */
+    width: 80%; /* Ajusta el ancho del menú */
+    transition: opacity 0.3s, visibility 0.3s;
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-end; /* Alinea los elementos del menú a la derecha */
+  }
+
+  .nav-list li a {
+    color: #ecececec;
+  }
+
+  .nav-list li a:hover {
+    color:#E0CF82; /* Cambia el color del texto al pasar el mouse */
+    font-size: 24px; /* Ajusta el tamaño al pasar el mouse */
+  }
+
+  .logo img {
+    max-width: 80px;
+  }
+
+  .social-icons a {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    padding: 1rem 0;
+  }
+
+  .nav-list li a {
+    padding: 8px 16px;
+  }
+
+  .encabezado h2 {
+    font-size: 1.2rem;
+    padding: 0.3rem;
+  }
+
+  .custom-file-wrapper {
+    flex-direction: column;
+  }
+
+  .custom-file-label,
+  .custom-file-button {
+    margin: 0.2rem 0;
+  }
+
+  .formulario {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .formulario input, .formulario textarea, .custom-file-label, .formulario .custom-file-input, .formulario button {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+
+  .wrap-two-column {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    column-gap: 0;
+  }
+
+  .section {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    font-size: 0.7rem;
+  }
+}
