@@ -208,7 +208,7 @@ footer {
   overflow: hidden;
   width: 100%;
   max-width: 100%;
-  position: relative;
+  position: relative; 
   background-color: grey;
   display: flex;
   align-items: center;
@@ -217,21 +217,30 @@ footer {
 .carousel-inner {
   display: flex;
   flex-wrap: nowrap;
-  animation: scroll 40s linear infinite;
-  padding: 10px;
+  animation: scroll 30s linear infinite;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  align-items: center;
 }
 
 .carousel-slide {
   flex: 0 0 auto;
-  margin-right: 10px;
-  max-height: 200px;
+  width: auto;
+  height: 120px;
   display: flex;
   justify-content: center;
+  margin-right: 40px;
+  align-items: center; 
+}
+
+.carousel-slide:last-child {
+  margin-right: 0; /* Elimina el margen del último slide */
 }
 
 .carousel-slide img {
-  max-height: 100%;
+  max-height: 80%;
   max-width: 100%;
+  max-height: 100px;
   object-fit: contain;
 }
 

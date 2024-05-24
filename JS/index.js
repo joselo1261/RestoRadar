@@ -170,7 +170,7 @@ createApp({
 
   mounted() {
     this.fetchData();
-    this.intervalId = setInterval(this.nextSlide, 3000);
+    this.intervalId = setInterval(this.nextSlide, 0);
   },
 }).mount("#app");
 

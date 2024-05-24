@@ -229,7 +229,6 @@ footer {
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr; /* nuevo */
   flex-wrap: wrap; /* anterior */
   justify-content: space-between;
   align-items: flex-start;
@@ -240,12 +239,19 @@ footer {
   background-color: grey;
 }
 
-
-.imagen, .mapa {
+.imagen {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  margin-bottom: 50px;
+}
+
+.mapa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 
 .mapa iframe {
