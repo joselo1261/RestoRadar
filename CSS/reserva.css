@@ -239,6 +239,14 @@ footer {
   background-color: grey;
 }
 
+#name{
+  background-color: #112d4e;
+  color: #E0CF82;
+  align-items: center;
+  font-size: 28px;
+
+}
+
 .imagen {
   display: flex;
   justify-content: center;

@@ -244,6 +244,12 @@ footer {
   object-fit: contain;
 }
 
+.restaurant-name {
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Animación del carrusel */
 @keyframes scroll {
   0% {

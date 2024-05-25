@@ -77,7 +77,7 @@ cerrar.addEventListener("click", () => {
 // Lee los parámetros de consulta de la URL
 const urlParams = new URLSearchParams(window.location.search);
 const capacidad = urlParams.get('capacidad');
-console.log("Capacidad: ",capacidad); // Verificar capacidad
+console.log("Capacidad: ",capacidad);
 
 // Selecciona los elementos del DOM
 const gridContainer = document.getElementById("gridContainer");
@@ -88,8 +88,8 @@ let cuadradoSeleccionadoAnteriormente = null;
 const dato = JSON.parse(localStorage.getItem('tarjetaSeleccionada'));
 
 // Configuración de la grilla
-const numCols = 5; // Número de columnas Fijas
-const numRows = Math.ceil(capacidad / numCols); // Número de filas
+const numCols = 5;
+const numRows = Math.ceil(capacidad / numCols);
 
 // Establecer el estilo del contenedor de la grilla
 gridContainer.style.display = 'grid';
@@ -133,7 +133,7 @@ for (let i = 1; i <= capacidad; i++) {
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     // Validar los datos del formulario
     if (validarFormulario()) {
@@ -150,7 +150,7 @@ document
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     const form = event.target;
 
@@ -219,12 +219,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const lat = urlParams.get("lat");
   const long = urlParams.get("long");
+  const name = urlParams.get("name");
   const direccion = urlParams.get("direccion");
   const barrio = urlParams.get("barrio");
   const horario = urlParams.get("horario");
   const precio = urlParams.get("precio");
 
   // Asignar valores a los elementos HTML
+  document.getElementById("name").innerText = name;
   document.getElementById("direccion").innerText = direccion;
   document.getElementById("barrio").innerText = barrio;
   document.getElementById("horario").innerText = horario;

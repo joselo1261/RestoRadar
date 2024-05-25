@@ -38,7 +38,11 @@
         <div class="carousel-inner">
           <div class="carousel-slide" v-for="(restaurant, index) in restaurants" :key="index">
             <a :href="'../PAGES/reserva.html?logo=' + encodeURIComponent(restaurant.logo)" target="_blank">
-              <img :src="restaurant.logo" :alt="restaurant.name" @click.prevent="navigateToPage(restaurant)" />
+              <img :src="restaurant.logo" :alt="restaurant.name" @mouseover="handleMouseOver(restaurant.name)"
+                @mouseout="hoveredRestaurantName = ''" @click.prevent="navigateToPage(restaurant)" />
+              <div v-if="hoveredRestaurantName === restaurant.name" class="restaurant-name">
+                {{ restaurant.name }}
+              </div>
             </a>
           </div>
         </div>
@@ -65,30 +69,30 @@
             simplificando la gestión. Maximiza la ocupación de tu
             restaurante.</span>
         </h2>
-     
-        
+
+
         <div class="equipo">
           <h2 class="equipos">Equipo de Trabajo</h2>
           <div class="integrante">
-              <img src="./IMAGENES/Equipo/alex.jpeg" alt="alex">
-              <p>Alejandro Blech</p>
+            <img src="./IMAGENES/Equipo/alex.jpeg" alt="alex">
+            <p>Alejandro Blech</p>
           </div>
           <div class="integrante">
-              <img src="./IMAGENES/Equipo/joselo.jpg" alt="joselo">
-              <p>Jose Luis Elisseche</p>
+            <img src="./IMAGENES/Equipo/joselo.jpg" alt="joselo">
+            <p>Jose Luis Elisseche</p>
           </div>
           <div class="integrante">
-              <img src="./IMAGENES/Equipo/roman.jpeg" alt="roman">
-              <p>Roman Terciana</p>
+            <img src="./IMAGENES/Equipo/roman.jpeg" alt="roman">
+            <p>Roman Terciana</p>
           </div>
 
- </main>
+  </main>
 
   <footer>
-    
+
   </footer>
-  
-  </div>    
+
+  </div>
   <script>
     // Define una variable global con la URL del logo
     window.logoUrl = 'url-del-logo-seleccionado';

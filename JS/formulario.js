@@ -80,7 +80,7 @@ cerrar.addEventListener("click", () => {
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     // Validar los datos del formulario
     if (validarFormulario()) {
@@ -97,7 +97,7 @@ document
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     const form = event.target;
 

@@ -91,8 +91,8 @@ cerrar.addEventListener("click", () => {
 
 
     // Crear un mapa de Google en un iframe con las coordenadas del restaurante
-    const lat = dato.latitud; // Obtener la latitud del restaurante desde los datos
-    const long = dato.longitud; // Obtener la longitud del restaurante desde los datos
+    const lat = dato.latitud; 
+    const long = dato.longitud;
 
     /// Construir la URL de Google Maps con las coordenadas
     const googleMapUrl = `https://www.google.com/maps?q=${lat},${long}&output=embed`;
@@ -119,9 +119,9 @@ const dato = JSON.parse(localStorage.getItem('tarjetaSeleccionada'));
 
 // Configuración de la grilla
 const numCols = 5; // Número de columnas Fijas
-const capacidad = dato.capacidad; // Capacidad del restaurante
-console.log("Capacidad: ",capacidad); // Verificar capacidad
-const numRows = Math.ceil(capacidad / numCols); // Número de filas
+const capacidad = dato.capacidad;
+console.log("Capacidad: ",capacidad);
+const numRows = Math.ceil(capacidad / numCols);
 
 // Establecer el estilo del contenedor de la grilla
 gridContainer.style.display = 'grid';
@@ -166,7 +166,7 @@ for (let i = 1; i <= capacidad; i++) {
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     // Validar los datos del formulario
     if (validarFormulario()) {
@@ -183,7 +183,7 @@ document
 document
   .getElementById("miFormulario")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Evitar enviar el formulario automáticamente
+    event.preventDefault();
 
     const form = event.target;
 

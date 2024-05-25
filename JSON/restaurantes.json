@@ -213,7 +213,7 @@
   {
     "id":"resto0005",
     "name": "Osaka",
-    "logo": "https://admin.osakanikkei.com/uploads/site/logo.svg",
+    "logo": "../IMAGENES/Logos/Osaka.png",
     "website": "https://www.osakanikkei.com/es/local/buenos-aires",
     "foto": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/cc/90/8d/un-ambiente-creado-especialmen.jpg?w=1400&h=-1&s=1",
     "direccion":"Concepción Arenal 2913, Cdad. Autónoma de Buenos Aires",
@@ -228,7 +228,7 @@
   {
     "id":"resto0004",
     "name": "Banchero",
-    "logo": "https://media-cdn.tripadvisor.com/media/photo-s/19/fe/1b/07/pizzeria-banchero.jpg",
+    "logo": "../IMAGENES/Logos/Banchero.png",
     "website": "https://www.facebook.com/pizzeriabanchero/",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-m/1280/16/e5/4a/e8/salon.jpg",
     "direccion":"Av. Corrientes 1300, Cdad. Autónoma de Buenos Aires",
@@ -243,7 +243,7 @@
   {
     "id":"resto0013",
     "name": "Guerrin",
-    "logo": "https://media-cdn.tripadvisor.com/media/photo-s/10/a9/3c/b2/el-logo-de-la-pizzeria.jpg",
+    "logo": "../IMAGENES/Logos/Guerrin.png",
     "website": "",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-o/10/85/e6/9e/photo0jpg.jpg",
     "direccion":"Av. Corrientes 1368, Cdad. Autónoma de Buenos Aires",
@@ -258,7 +258,7 @@
   {
     "id":"resto0014",
     "name": "El Cuartito",
-    "logo": "https://media-cdn.tripadvisor.com/media/photo-s/12/7e/67/65/logo-en-los-platos.jpg",
+    "logo": "../IMAGENES/Logos/El_Cuartito.png",
     "website": "",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-o/1a/9e/59/5d/img-20200116-121954-largejpg.jpg",
     "direccion":"Talcahuano 937, Cdad. Autónoma de Buenos Aires",
@@ -273,7 +273,7 @@
   {
     "id":"resto0015",
     "name": "Angelin",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmc8Bnx9jJRfAzJ1a1FkGAn4QqgrQ411YWbQ&usqp=CAU",
+    "logo": "../IMAGENES/Logos/Angelin.png",
     "website": "https://angelin5.webnode.es/",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-m/1280/1e/19/25/97/barra-de-la-calle-de.jpg",
     "direccion":"Av. Córdoba 5270, Cdad. Autónoma de Buenos Aires",
@@ -288,7 +288,7 @@
   {
     "id":"resto0016",
     "name": "Sarkis",
-    "logo": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/1d/06/25/img-20180811-150300578.jpg?w=1400&h=-1&s=1",
+    "logo": "../IMAGENES/Logos/Sarkis.png",
     "website": "https://www.facebook.com/pages/sarkis/156339884415152",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-o/0f/64/e2/62/photo0jpg.jpg",
     "direccion":"Thames 1101, Cdad. Autónoma de Buenos Aires",
@@ -302,8 +302,8 @@
   },
   {
     "id":"resto0019",
-    "name": "Il Materello",
-    "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ98PKwbBNw7ZBnadmSuGU8An1XbBicIE_fkA&usqp=CAU",
+    "name": "Il Matterello",
+    "logo": "../IMAGENES/Logos/Il_Matterello.png",
     "website": "",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-o/08/1d/57/b6/photo0jpg.jpg",
     "direccion":"Martín Rodríguez 517, Cdad. Autónoma de Buenos Aires",
@@ -318,7 +318,7 @@
   {
     "id":"resto0021",
     "name": "Buenos Aires Verde",
-    "logo": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQZbNYrd7UFufmJFmNLTkuVDjGNDrPcHeG1ZWWJxErytknu3tOt",
+    "logo": "../IMAGENES/Logos/BsAs_Verde.png",
     "website": "https://www.facebook.com/buenos.aires.verde.restaurant",
     "foto": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/07/a2/b0/7f/buenos-aires-verde.jpg?w=2000&h=-1&s=1",
     "direccion":"Gorriti 5657, Cdad. Autónoma de Buenos Aires",
@@ -333,9 +333,9 @@
   {
     "id":"resto0022",
     "name": "Naturaleza Sabia",
-    "logo": "",
+    "logo": "../IMAGENES/Logos/Naturaleza_Sabia.png",
     "website": "https://www.naturalezasabia.com.ar/",
-    "foto": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/43/9c/ef/photo0jpg.jpg?w=1400&h=-1&s=1",
+    "foto": "",
     "direccion":"Perú 677, Cdad. Autónoma de Buenos Aires",
     "barrio":"Monserrat",
     "cocina": ["Vegetariano"],
@@ -348,7 +348,7 @@
   {
     "id":"resto0023",
     "name": "Casa Munay",
-    "logo": "",
+    "logo": "../IMAGENES/Logos/Casa_Munay.png",
     "website": "https://casamunay.com/",
     "foto": "https://media-cdn.tripadvisor.com/media/photo-o/29/6b/d5/ca/gorriti-y-arevalo-te.jpg",
     "direccion":"Gorriti 5996, Cdad. Autónoma de Buenos Aires",

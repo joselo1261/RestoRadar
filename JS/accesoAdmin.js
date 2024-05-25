@@ -100,8 +100,8 @@ createApp({
         .then((data) => {
           this.datos = data.features;
           this.extractUniqueValues();
-          this.datosFiltrados = this.datos; // Inicializar datosFiltrados con todos los datos
-          this.filtro(); // Aplicar automáticamente los filtros al cargar la página
+          this.datosFiltrados = this.datos;
+          this.filtro();
         })
         .catch((error) => {
           console.log("Error:" + error);

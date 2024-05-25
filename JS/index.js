@@ -90,6 +90,7 @@ createApp({
       restaurantHorario: "",
       restaurantPrecio: "",
       restaurantCapacidad: 0,
+      hoveredRestaurantName: "",
     };
   },
 
@@ -107,6 +108,7 @@ createApp({
         const primerRestaurante = this.restaurants[0];
         this.restaurantLat = primerRestaurante.latitud;
         this.restaurantLong = primerRestaurante.longitud;
+        this.restaurantName = primerRestaurante.name;
         this.restaurantDireccion = primerRestaurante.direccion;
         this.restaurantBarrio = primerRestaurante.barrio;
         this.restaurantHorario = primerRestaurante.horario;
@@ -121,6 +123,7 @@ createApp({
           "Datos del primer restaurante:",
           this.restaurantLat,
           this.restaurantLong,
+          this.restaurantName,
           this.restaurantDireccion,
           this.restaurantBarrio,
           this.restaurantHorario,
@@ -130,6 +133,7 @@ createApp({
       } catch (error) {
         console.error("Error fetching data:", error);
       }
+  
     },
 
     nextSlide() {
@@ -140,15 +144,15 @@ createApp({
     },
 
     navigateToPage(restaurant) {
-      const logoUrl = restaurant.logo; // Obtener la URL del logo
-      const restaurantName = restaurant.name; // Obtener el nombre del restaurante
-      const restaurantLat = restaurant.latitud; // Obtener la latitud
-      const restaurantLong = restaurant.longitud; // Obtener la longitud
-      const restaurantDireccion = restaurant.direccion; // Obtener la dirección
-      const restaurantBarrio = restaurant.barrio; // Obtener el Barrio
-      const restaurantHorario = restaurant.horario; // Obtener el Horario
-      const restaurantPrecio = restaurant.precio; // Obtener el nivel de Precio
-      const restaurantCapacidad = parseInt(restaurant.capacidad); // Obtener la cantidad de mesas
+      const logoUrl = restaurant.logo;
+      const restaurantName = restaurant.name;
+      const restaurantLat = restaurant.latitud;
+      const restaurantLong = restaurant.longitud;
+      const restaurantDireccion = restaurant.direccion;
+      const restaurantBarrio = restaurant.barrio;
+      const restaurantHorario = restaurant.horario;
+      const restaurantPrecio = restaurant.precio;
+      const restaurantCapacidad = parseInt(restaurant.capacidad);
       const urlReserva = `../PAGES/reserva.html?logo=${encodeURIComponent(
         logoUrl
       )}&name=${encodeURIComponent(restaurantName)}&lat=${encodeURIComponent(
@@ -164,8 +168,14 @@ createApp({
       )}&precio=${encodeURIComponent(
         restaurantPrecio
       )}&capacidad=${encodeURIComponent(restaurantCapacidad)}`;
-      window.location.href = urlReserva; // Redirigir a la página de reserva con los parámetros
+      window.location.href = urlReserva;
     },
+
+      // Para manejar el evento mouseover
+        handleMouseOver(restaurantName) {
+        this.hoveredRestaurantName = restaurantName;
+        console.log("Mouse sobre:", restaurantName);
+    }
   },
 
   mounted() {
