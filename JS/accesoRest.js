@@ -73,11 +73,6 @@ document.querySelector("footer").innerHTML = `
     </footer>`;
 
 
-
-
-
-
-
 // -------------- Zona de Graficos ---------------- //
 
 $(document).ready(function() {

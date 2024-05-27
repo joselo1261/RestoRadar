@@ -147,7 +147,7 @@ const app = createApp({
         // Verificar que los datos se hayan almacenado correctamente
         console.log("Datos de tarjeta seleccionada:", dato);
 
-        // Redirigir a la página de reserva2.html
+        // Redirigir a la página de reserva1.html
         window.location.href = '../PAGES/reserva1.html';
     }
 
