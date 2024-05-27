@@ -1,0 +1,30 @@
+Hemos estructurado el proyecto en 6 grupos segun el siguiente detalle:
+1- CSS
+2- Imágenes (Logos, Fotos, Otros)
+3- JS
+4- JSON (Uno del GCBA y Otro propio)
+5- PAGES (contiene 9 paginas)
+6- Varios (los prototipos en baja y media del proyecto)
+Index.html (pagina de Inicio)
+
+En la pagina de inicio uno puede realizar dos acciones, una para clientes y otra para dueño de restaurantes (actuales y futuros)
+Cliente: puede comenzar su reserva mediante dos métodos, selección de un logo del carousel dinámico y otro por búsqueda por tipo de comida.
+Restaurante: puede ingresar para obtener información del sistema o realizar consultas.
+
+Reserva a través del logo: lo lleva a la pagina respectiva (reserva.html) donde ve la información del restaurante elegido, ubicación y mapa
+y puede continuar con el llenado del formulario de reserva y selección de mesa.
+Una vez completado lo anterior lo dirige a la pagina (formulario.html), donde verifica los datos cargados, restaurante y mesa elegida. Desde allí se envía la reserva al mail que indique.
+
+Reserva a través de Buscar: en la pagina (buscar.html) el cliente elige por tipo de comida de la oferta de restaurantes actuales. Haciendo click en la imagen elegida lo dirige a la pagina (reserva1.html)
+donde ve la información del restaurante elegido, ubicación y mapa y puede continuar con el llenado del formulario de reserva y selección de mesa. A partir de aquí mismo
+procedimiento del punto anterior.
+
+Restaurante: yendo a la pagina (sumaTuLocal.html) se ofrece información para futuros interesados en contratar el sistema, a través de un formulario
+de contacto. Además permite a los restaurantes ya usuarios del sistema, ingresar a una pagina (accesoRest.html) donde podrá consultar las estadísticas de su local.
+Usuario: marcela  - Contraseña: marcela1
+
+También en la pagina (sumaTuLocal.html) en caso de usar un login como Administrador, se ingresa a (accesoAdmin1.html) que tiene dos opciones"
+Opción 1: acceder a la base de datos de los restaurantes(clientes actuales) (accesoAdmin2.html) y realizar búsquedas por selección.
+Opción 2: acceder a la base de datos completa de los restaurantes de CABA (accesoAdmin3.html) y realizar búsquedas por selección.
+Usuario: admin  - Contraseña: admin1
+
