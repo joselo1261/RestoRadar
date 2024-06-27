@@ -97,12 +97,14 @@ createApp({
   methods: {
     async fetchData() {
       try {
+        //const response = await fetch("https://user1261.pythonanywhere.com/restaurantes");
         const response = await fetch("../JSON/restaurantes.json");
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        this.restaurants = data.restaurantes;
+        if (data && data.restaurantes && data.restaurantes.length > 0) {
+          this.restaurants = data.restaurantes;
 
         // Obtener los datos del primer restaurante
         const primerRestaurante = this.restaurants[0];
@@ -130,6 +132,9 @@ createApp({
           this.restaurantPrecio,
           this.restaurantCapacidad
         );
+        } else {
+        throw new Error("No se encontraron datos de restaurantes válidos");
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -139,8 +144,10 @@ createApp({
     nextSlide() {
       // Función para avanzar al siguiente slide
       const currentIndex = this.currentIndex;
-      const nextIndex = (currentIndex + 1) % this.restaurants.length;
-      this.currentIndex = nextIndex;
+      if (this.restaurants.length > 0) {
+        const nextIndex = (currentIndex + 1) % this.restaurants.length;
+        this.currentIndex = nextIndex;
+      }
     },
 
     navigateToPage(restaurant) {

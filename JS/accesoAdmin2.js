@@ -79,6 +79,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      //url:"https://user1261.pythonanywhere.com/restaurantes",
       url: "../JSON/restaurantes.json",
       datos: [],
       cocina: "Todos",

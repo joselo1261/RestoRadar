@@ -76,6 +76,7 @@ const app = createApp({
   data() {
     return {
       url: "../JSON/restaurantes.json",
+      //url:"https://user1261.pythonanywhere.com/restaurantes",
       datos: [],
       cocina: "Todos",
       cocinas: [],
