@@ -89,6 +89,7 @@ createApp({
       restaurantBarrio: "",
       restaurantHorario: "",
       restaurantPrecio: "",
+      restaurantCocina:[],
       restaurantCapacidad: 0,
       hoveredRestaurantName: "",
     };
@@ -116,6 +117,7 @@ createApp({
         this.restaurantHorario = primerRestaurante.horario;
         this.restaurantPrecio = primerRestaurante.precio;
         this.restaurantCapacidad = primerRestaurante.capacidad;
+        this.restaurantCocina = primerRestaurante.cocina;
 
         // Llama a la función para actualizar el mapa con las nuevas coordenadas
         actualizarMapa(this.restaurantLat, this.restaurantLong);
@@ -130,7 +132,8 @@ createApp({
           this.restaurantBarrio,
           this.restaurantHorario,
           this.restaurantPrecio,
-          this.restaurantCapacidad
+          this.restaurantCapacidad,
+          this.restaurantCocina
         );
         } else {
         throw new Error("No se encontraron datos de restaurantes válidos");
@@ -159,8 +162,11 @@ createApp({
       const restaurantBarrio = restaurant.barrio;
       const restaurantHorario = restaurant.horario;
       const restaurantPrecio = restaurant.precio;
+      const restaurantCocina = restaurant.cocina;
       const restaurantCapacidad = parseInt(restaurant.capacidad);
+
       const urlReserva = `../PAGES/reserva.html?logo=${encodeURIComponent(
+      
         logoUrl
       )}&name=${encodeURIComponent(restaurantName)}&lat=${encodeURIComponent(
         restaurantLat
@@ -174,6 +180,8 @@ createApp({
         restaurantHorario
       )}&precio=${encodeURIComponent(
         restaurantPrecio
+      )}&cocina=${encodeURIComponent(
+        restaurantCocina
       )}&capacidad=${encodeURIComponent(restaurantCapacidad)}`;
       window.location.href = urlReserva;
     },

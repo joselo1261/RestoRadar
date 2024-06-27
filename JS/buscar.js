@@ -96,6 +96,7 @@ const app = createApp({
             this.extractUniqueValues();
           } else {
             console.error("Estructura de datos no válida:", data);
+            this.error = true;
           }
         })
         .catch((error) => {
@@ -120,6 +121,7 @@ const app = createApp({
       }
 
       this.cocinas = Array.from(cocinasSet);
+      console.log("Valores únicos de cocina:", this.cocinas);
     },
 
     filtro() {
@@ -133,10 +135,12 @@ const app = createApp({
           (Array.isArray(dato.cocina) && dato.cocina.includes(this.cocina)) ||
           dato.cocina === this.cocina
       );
+      console.log("Datos filtrados:", this.datosFiltrados);
     },
 
     orden() {
       this.datos.sort((a, b) => (a.name > b.name ? 1 : -1));
+      console.log("Datos ordenados:", this.datos);
     },
 
 
