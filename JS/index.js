@@ -98,14 +98,17 @@ createApp({
   methods: {
     async fetchData() {
       try {
-        //const response = await fetch("https://user1261.pythonanywhere.com/restaurantes");
-        const response = await fetch("../JSON/restaurantes.json");
+        // const response = await fetch("../JSON/restaurantes.json"); => Para usar con Json local
+        const response = await fetch("https://user1261.pythonanywhere.com/restaurantes"); // => Para usar Json de pythonanywhere
+        
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        if (data && data.restaurantes && data.restaurantes.length > 0) {
-          this.restaurants = data.restaurantes;
+        // if (data && data.restaurantes && data.restaurantes.length > 0) {
+        //  this.restaurants = data.restaurantes; => Para usar con Json local
+        if (data && data.length > 0) { // => Para usar Json de pythonanywhere
+          this.restaurants = data;
 
         // Obtener los datos del primer restaurante
         const primerRestaurante = this.restaurants[0];

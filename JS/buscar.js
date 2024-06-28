@@ -75,8 +75,9 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
-      url: "../JSON/restaurantes.json",
-      //url:"https://user1261.pythonanywhere.com/restaurantes",
+      // url: "../JSON/restaurantes.json", // => Para usar Json local
+      url:"https://user1261.pythonanywhere.com/restaurantes", // => Para usar con Json de pythonanywhere
+
       datos: [],
       cocina: "Todos",
       cocinas: [],
@@ -91,8 +92,10 @@ const app = createApp({
         .then((response) => response.json())
         .then((data) => {
           console.log("Datos obtenidos:", data);
-          if (data && data.restaurantes && Array.isArray(data.restaurantes)) {
-            this.datos = data.restaurantes;
+          // if (data && data.restaurantes && Array.isArray(data.restaurantes)) { // => Para usar Json local
+          if (Array.isArray(data)) { // => Para usar con Json de pythonanywhere
+            // this.datos = data.restaurantes; // => Para usar Json local
+            this.datos = data; // => Para usar con Json de pythonanywhere
             this.extractUniqueValues();
           } else {
             console.error("Estructura de datos no válida:", data);
