@@ -43,61 +43,7 @@
     </section>
   </main>
 
-  <script>  
-// Script para detalles de reserva y envío de correo
 
-  // Recuperar los datos del almacenamiento local
-
-  var restElegido = localStorage.getItem('restElegido');
-  var nombre = localStorage.getItem('nombre');
-  var telefono = localStorage.getItem('telefono');
-  var fecha = localStorage.getItem('fecha');
-  var hora = localStorage.getItem('hora');
-  var personas = localStorage.getItem('personas');
-  var lugar = localStorage.getItem('lugar');
-  var mesaReservada = localStorage.getItem('mesaReservada');
-
-  // Mostrar los datos en la página
-  document.getElementById('restElegido').textContent = restElegido;
-  document.getElementById('nombre').textContent = nombre;
-  document.getElementById('telefono').textContent = telefono;
-  document.getElementById('fecha').textContent = fecha;
-  document.getElementById('hora').textContent = hora;
-  document.getElementById('personas').textContent = personas;
-  document.getElementById('lugar').textContent = lugar;
-  document.getElementById('mesaReservada').textContent = mesaReservada;
-
-  // Limpiar los datos del almacenamiento local después de usarlos
-  localStorage.removeItem('restElegido');
-  localStorage.removeItem('nombre');
-  localStorage.removeItem('telefono');
-  localStorage.removeItem('fecha');
-  localStorage.removeItem('hora');
-  localStorage.removeItem('personas');
-  localStorage.removeItem('lugar');
-  localStorage.removeItem('mesaReservada');
-
-  // Agregar evento clic al botón de enviar correo
-  document.getElementById('enviarCorreo').addEventListener('click', function() {
-  var correo = document.getElementById('email').value;
-  if (validarCorreo(correo)) {
-    // Aquí puedes agregar el código para enviar el correo
-    alert('Correo enviado\nGracias por Elegirnos\nLos esperamos !!!!');
-  } else {
-    alert('Por favor, introduce un correo electrónico válido\nFormato: xxxxxx@xxx.xxx')
-  }
-  });
-
-  // Función para validar el formato del correo electrónico
-  function validarCorreo(correo) {
-    var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(correo);
-  }
-  
-  </script>
-  
-
-  
   <footer>
 
   </footer>
