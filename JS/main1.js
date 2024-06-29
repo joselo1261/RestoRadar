@@ -9,11 +9,6 @@ document.querySelector("header").innerHTML = `
       <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
       <ul class="nav-list">
         <li>
-          <a href="./mapa.html">Mapas</a>
-        </li>
-      </ul>
-      <ul class="nav-list">
-        <li>
           <a href="./accesoAdmin1.html">Administrador</a>
         </li>
       </ul>

@@ -1,68 +1,3 @@
-.btn-primary {
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-  transform: scale(1.1);
-}
-.card-custom {
-  background-color: #f8f9fa; /* Fondo claro */
-  border: 1px solid #007bff; /* Borde azul */
-  border-radius: 10px; /* Bordes redondeados */
-  height: 100%; /* Altura completa */
-  display: flex; /* Utilizar flexbox */
-  flex-direction: column; /* Dirección de columna */
-  justify-content: space-between; /* Alinear contenido */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-.card-custom .card-title {
-  color: #112d4e; /* Título color logo */
-}
-.card-custom .card-footer {
-  background-color: #e9ecef; /* Fondo claro para el pie de la tarjeta */
-}
-
-.btn-custom-success {
-  background-color: #28a745;
-  border-color: #28a745;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.btn-custom-danger {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.card-img-top-custom {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.card-img-fixed {
-  height: 200px; /* Altura fija para todas las imágenes */
-  object-fit: cover; /* Cubrir el área designada */
-}
-
-.card-text {
-  margin-bottom: 0.5rem; /* Reducir el margen inferior de todos los párrafos dentro de la tarjeta */
-}
-
-.cocinas-label {
-  margin-bottom: 0.2rem; /* Reducir el margen inferior de la etiqueta 'Cocinas:' */
-}
-
-.cocinas-list {
-  margin-top: 0.2rem; /* Reducir el margen superior de la lista de cocinas */
-  margin-bottom: 0.5rem; /* Reducir el margen inferior de la lista de cocinas */
-}
-
-
 /* Estilos del Footer completo */
 footer {
   position: relative;
@@ -87,7 +22,7 @@ footer {
 }
 
 .social-icons a:hover {
-  color: #E0CF82;
+  color: #e0cf82;
   font-size: 24px; /* Aumenta el tamaño al pasar el mouse */
 }
 
@@ -100,7 +35,7 @@ footer {
 
 .contacto a:hover {
   text-decoration: underline;
-  color: #E0CF82;
+  color: #e0cf82;
 }
 
 .derechos p {
@@ -138,24 +73,23 @@ footer {
   padding: 0.375rem 0.75rem; /* Ajustar el relleno según sea necesario */
 }
 
-
 /* General */
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-style: normal;
-  font-optical-sizing:auto;
+  font-optical-sizing: auto;
   text-decoration: none;
 }
+
 h1 {
   margin: 10px 0 10px 0;
   color: blue;
   background-color: lightskyblue;
   text-align: center;
 }
-
 
 /* Header y barra de navegacion */
 header {
@@ -167,7 +101,7 @@ header {
   justify-content: space-between;
   align-items: center;
   border-bottom: 2px solid #ccc;
-  background-color: #E0CF82;
+  background-color: #e0cf82;
   padding: 2rem;
 }
 
@@ -214,4 +148,8 @@ header {
 
 .transparent-header .logo img:hover {
   opacity: 1; /* Restaurar la opacidad completa al pasar el ratón */
+}
+
+#mi_mapa {
+  height: 600px;
 }
