@@ -9,7 +9,7 @@ document.querySelector("header").innerHTML = `
       <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
       <ul class="nav-list">
         <li>
-          <a href="./mapa.html">Mapas</a>
+          <a href="./mapa.html">Mapa</a>
         </li>
       </ul>
       <ul class="nav-list">
