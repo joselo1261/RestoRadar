@@ -12,12 +12,12 @@
     <script src="https://kit.fontawesome.com/6410e86f64.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../CSS/mapa.css">
 
-    
 </head>
 
 <body>
@@ -25,15 +25,40 @@
         <!-- place navbar here -->
     </header>
     <div id="app" class="container">
-        <h1>MAPA RESTAURANTES CABA</h1>
-        <div class="pagination d-flex justify-content-center mt-4">
-            <button @click="prevPage" :disabled="currentPage === 0" class="btn btn-primary me-2">Página Anterior</button>
-            <button @click="nextPage" :disabled="(currentPage + 1) * pageSize >= allData.length" class="btn btn-primary">Próxima Página</button>
-        </div>
-        <div id="mi_mapa" class="embed-responsive embed-responsive-16by9">
-            <!-- Aquí va tu mapa -->
+        <h1 class="text-center my-4">MAPA RESTAURANTES CABA</h1>
+
+        <!-- Filtros -->
+        <div class="filters mb-4">
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <select v-model="selectedCategoria" @change="applyFilters" class="form-control">
+                        <option value="">Categorías</option>
+                        <option v-for="categoria in categorias" :key="categoria" :value="categoria">{{ categoria }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <select v-model="selectedCocina" @change="applyFilters" class="form-control">
+                        <option value="">Cocinas</option>
+                        <option v-for="cocina in cocinas" :key="cocina" :value="cocina">{{ cocina }}</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <select v-model="selectedBarrio" @change="applyFilters" class="form-control">
+                        <option value="">Barrios</option>
+                        <option v-for="barrio in barrios" :key="barrio" :value="barrio">{{ barrio }}</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
+        <div class="pagination d-flex justify-content-center mt-4">
+            <button @click="prevPage" :disabled="currentPage === 0" class="btn btn-lg btn-primary mx-2">Página Anterior</button>
+            <button @click="nextPage" :disabled="(currentPage + 1) * pageSize >= allData.length" class="btn btn-lg btn-primary mx-2">Próxima Página</button>
+        </div>
+        <div id="mi_mapa" class="embed-responsive embed-responsive-16by9 mt-4">
+            <!-- Aquí va tu mapa -->
+        </div>
+    </div>
 
     <footer>
         <!-- Aquí va el pie de página -->
@@ -41,6 +66,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="../JS/mapaCaba.js"></script>
 </body>
 

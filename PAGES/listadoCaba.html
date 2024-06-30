@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Oferta Gastronómica CABA</title>
+    <!-- Biblioteca de html2pdf.js para generar pdfs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/6410e86f64.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/listadoCaba.css">
+</head>
+<body>
+    <header id="myHeader">
+        <!-- Aquí puede ir el navbar -->
+    </header>
+
+    <div id="app" class="container">
+        <h1 class="my-4">LISTADO CLIENTES POTENCIALES CABA</h1>
+        <!-- Alineación a la derecha del botón -->
+        <div class="text-right mb-3">
+            <button class="btn btn-dark text-white" @click="generarPDF">Descargar PDF</button>
+        </div>
+
+        <!-- Filtros -->
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <label for="categoria" class="form-label"
+                    style="display: inline-block; margin-right: 10px;">Categoría:</label>
+                <select class="form-select" id="categoria" v-model="categoria" @change="filtro">
+                    <option value="Todos">Todos</option>
+                    <option v-for="cat in categorias" :value="cat">{{ cat }}</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="cocina" class="form-label"
+                    style="display: inline-block; margin-right: 10px;">Cocina:</label>
+                <select class="form-select" id="cocina" v-model="cocina" @change="filtro">
+                    <option value="Todos">Todos</option>
+                    <option v-for="coc in cocinas" :value="coc">{{ coc }}</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="barrio" class="form-label"
+                    style="display: inline-block; margin-right: 10px;">Barrio:</label>
+                <select class="form-select" id="barrio" v-model="barrio" @change="filtro">
+                    <option value="Todos">Todos</option>
+                    <option v-for="bar in barrios" :value="bar">{{ bar }}</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Contenedor con título y tabla de datos -->
+        <div id="tablaDatos" class="table-responsive">
+            <h2 class="text-center mb-4">Listado Oferta Gastronómica CABA</h2>
+            <table class="table table-bordered">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Barrio</th>
+                        <th scope="col">Categoría</th>
+                        <th scope="col">Cocina</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="dato in datosFiltrados" :key="dato.id">
+                        <td>{{ dato.properties.nombre }}</td>
+                        <td>{{ dato.properties.direccion_completa }}</td>
+                        <td>{{ dato.properties.barrio }}</td>
+                        <td>{{ dato.properties.categoria }}</td>
+                        <td>{{ dato.properties.cocina }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <!-- Aquí puede ir el pie de página -->
+    </footer>
+
+    <!-- Scripts de Bootstrap y otros -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        crossorigin="anonymous"></script>
+
+    <!-- Script personalizado de Vue.js -->
+    <script src="../JS/listadoCaba.js"></script>
+</body>
+</html>

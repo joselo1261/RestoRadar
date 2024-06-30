@@ -9,12 +9,19 @@ createApp({
     return {
       restaurantes: [],
       allData: [],
+      filteredData: [],
       pageSize: 50,
       currentPage: 0,
       url: "../JSON/oferta-gastronomica.geojson",
       cargando: true,
       map: null,
       markers: [], // Array para almacenar los marcadores
+      selectedCategoria: '',
+      selectedCocina: '',
+      selectedBarrio: '',
+      categorias: [],
+      cocinas: [],
+      barrios: []
     };
   },
   methods: {
@@ -28,6 +35,8 @@ createApp({
         })
         .then(data => {
           this.allData = data.features;
+          this.filteredData = this.allData;
+          this.extractFilters();
           this.loadPage();
           this.cargando = false;
           this.initMap();
@@ -37,14 +46,42 @@ createApp({
           this.cargando = false;
         });
     },
+    extractFilters() {
+      const categorias = new Set();
+      const cocinas = new Set();
+      const barrios = new Set();
+
+      this.allData.forEach(feature => {
+        categorias.add(feature.properties.categoria);
+        cocinas.add(feature.properties.cocina);
+        barrios.add(feature.properties.barrio);
+      });
+
+      this.categorias = Array.from(categorias);
+      this.cocinas = Array.from(cocinas);
+      this.barrios = Array.from(barrios);
+    },
+    applyFilters() {
+      this.filteredData = this.allData.filter(feature => {
+        const matchesCategoria = this.selectedCategoria === '' || feature.properties.categoria === this.selectedCategoria;
+        const matchesCocina = this.selectedCocina === '' || feature.properties.cocina === this.selectedCocina;
+        const matchesBarrio = this.selectedBarrio === '' || feature.properties.barrio === this.selectedBarrio;
+        return matchesCategoria && matchesCocina && matchesBarrio;
+      });
+      this.currentPage = 0;
+      this.loadPage();
+    },
     loadPage() {
       const start = this.currentPage * this.pageSize;
       const end = start + this.pageSize;
-      this.restaurantes = this.allData.slice(start, end).map(feature => ({
+      this.restaurantes = this.filteredData.slice(start, end).map(feature => ({
         lat: feature.geometry.coordinates[1],
         long: feature.geometry.coordinates[0],
         name: feature.properties.nombre,
-        direccion: feature.properties.direccion_completa
+        direccion: feature.properties.direccion_completa,
+        barrio: feature.properties.barrio,
+        categoria: feature.properties.categoria,
+        cocina: feature.properties.cocina
       }));
 
       if (this.map) {
@@ -83,11 +120,14 @@ createApp({
             <div style="font-size: 12px; max-width: 150px;">
               <h4 style="margin: 0;">${restaurante.name}</h4>
               <p style="margin: 0;"><strong>Dirección:</strong> ${restaurante.direccion}</p>
+              <p style="margin: 0;"><strong>Barrio:</strong> ${restaurante.barrio}</p>
+              <p style="margin: 0;"><strong>Categoria:</strong> ${restaurante.categoria}</p>
+              <p style="margin: 0;"><strong>Cocina:</strong> ${restaurante.cocina}</p>
             </div>
           `, {
             offset: [0, 20]
           });
-      
+
         marker.on('click', () => {
           this.map.panBy([0, -100], { animate: true });
         });
@@ -104,8 +144,6 @@ createApp({
     this.fetchData(this.url);
   },
 }).mount('#app');
-
-
 
 
 

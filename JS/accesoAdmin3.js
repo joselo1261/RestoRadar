@@ -9,6 +9,9 @@ document.querySelector("header").innerHTML = `
       <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
       <ul class="nav-list">
         <li>
+          <a href="./listadoCaba.html" >Listado CABA</a>
+        </li>
+        <li>
           <a href="./mapaCaba.html" >Mapa CABA</a>
         </li>
         <li>
