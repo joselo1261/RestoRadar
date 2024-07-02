@@ -23,7 +23,6 @@
 
     <div id="app" class="container">
         <h1 class="my-4">LISTADO CLIENTES POTENCIALES CABA</h1>
-        <!-- Alineación a la derecha del botón -->
         <div class="text-right mb-3">
             <button class="btn btn-dark text-white" @click="generarPDF">Descargar PDF</button>
         </div>
@@ -32,7 +31,7 @@
         <div class="row mb-3">
             <div class="col-md-4">
                 <label for="categoria" class="form-label"
-                    style="display: inline-block; margin-right: 10px;">Categoría:</label>
+                    style="display: inline-block; margin-right: 10px;"><strong>Categoría:</strong></label>
                 <select class="form-select" id="categoria" v-model="categoria" @change="filtro">
                     <option value="Todos">Todos</option>
                     <option v-for="cat in categorias" :value="cat">{{ cat }}</option>
@@ -40,7 +39,7 @@
             </div>
             <div class="col-md-4">
                 <label for="cocina" class="form-label"
-                    style="display: inline-block; margin-right: 10px;">Cocina:</label>
+                    style="display: inline-block; margin-right: 10px;"><strong>Cocina:</strong></label>
                 <select class="form-select" id="cocina" v-model="cocina" @change="filtro">
                     <option value="Todos">Todos</option>
                     <option v-for="coc in cocinas" :value="coc">{{ coc }}</option>
@@ -48,7 +47,7 @@
             </div>
             <div class="col-md-4">
                 <label for="barrio" class="form-label"
-                    style="display: inline-block; margin-right: 10px;">Barrio:</label>
+                    style="display: inline-block; margin-right: 10px;"><strong>Barrio:</strong></label>
                 <select class="form-select" id="barrio" v-model="barrio" @change="filtro">
                     <option value="Todos">Todos</option>
                     <option v-for="bar in barrios" :value="bar">{{ bar }}</option>
