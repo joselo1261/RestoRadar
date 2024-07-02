@@ -1,4 +1,4 @@
-// Usando html2pdf.js => https://www.npmjs.com/package/html2pdf.js
+// Usando pdf-lib
 
 const { createApp, nextTick } = Vue;
 
@@ -55,50 +55,37 @@ createApp({
         (dato) =>
           (this.categoria === "Todos" ||
             dato.properties.categoria === this.categoria) &&
-          (this.cocina === "Todos" || dato.properties.cocina === this.cocina) &&
+          (this.cocina === "Todos" ||
+            dato.properties.cocina === this.cocina) &&
           (this.barrio === "Todos" || dato.properties.barrio === this.barrio)
       );
     },
 
     async generarPDF() {
-      await nextTick(); // Esperar a que el DOM esté completamente actualizado
-      const element = document.getElementById("tablaDatos"); // ID del elemento que quieres convertir a PDF
-    
-      const opt = {
-        margin: 0.5,
-        filename: 'listado_gastronomico_caba.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 4 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-    
-      // Verificar si html2pdf está definido antes de usarlo
-      if (typeof html2pdf !== "undefined") {
-        console.log("Generando PDF...");
-        try {
-          // Esperar un segundo antes de capturar el contenido
-          setTimeout(async () => {
-            await html2pdf().from(element).set(opt).save();
-          }, 2000);
-        } catch (error) {
-          console.error("Error al generar PDF:", error);
-        }
+      const response = await fetch('/generate_pdf', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ datosFiltrados: this.datosFiltrados }),
+      });
+
+      if (response.ok) {
+        const blob = await response.blob();
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'listado_gastronomico_caba.pdf';
+        link.click();
       } else {
-        console.error(
-          "html2pdf no está definido. Asegúrate de incluir la biblioteca html2pdf en tu página."
-        );
+        console.error('Error al generar PDF');
       }
     },
-    
   },
 
   created() {
     this.fetchData(this.url);
   },
 }).mount("#app");
-
-
-
 
 
 
