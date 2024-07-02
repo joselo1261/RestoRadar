@@ -76,7 +76,7 @@ createApp({
       if (typeof html2pdf !== "undefined") {
         console.log("Generando PDF...");
         try {
-          // Esperar un segundo antes de capturar el contenido
+          // Esperar dos segundos antes de capturar el contenido
           setTimeout(async () => {
             await html2pdf().from(element).set(opt).save();
           }, 2000);
