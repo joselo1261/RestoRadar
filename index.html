@@ -1,104 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./IMAGENES/restoradar.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="./IMAGENES/restoradar.png" type="image/x-icon" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/6410e86f64.js"
+      crossorigin="anonymous"
+    ></script>
 
-  <script src="https://kit.fontawesome.com/6410e86f64.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <title>RestoRadar</title>
+    <link rel="stylesheet" href="./CSS/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <body>
+    <header id="myHeader"></header>
 
-  <title>RestoRadar</title>
-  <link rel="stylesheet" href="./CSS/index.css" />
-</head>
-
-<body>
-  <header id="myHeader"></header>
-
-  <main>
-    <h1>
-      <span>Resolvemos la reserva online para tus restaurantes favoritos.</span>
-    </h1>
-    <section class="container">
-      <h2>
-        Te mostramos los mejores restaurantes cercanos a tu domicilio y con
-        solo un par de clics podrás hacer tu reserva. Elige donde comer y
-        listo a disfrutar la experiencia con familiares y amigos.
-      </h2>
-    </section>
-    <section>
-      <div id="app" class="carousel-container">
-        <div class="carousel-inner">
-          <div class="carousel-slide" v-for="(restaurant, index) in restaurants" :key="index">
-            <a :href="'../PAGES/reserva.html?logo=' + encodeURIComponent(restaurant.logo)" target="_blank">
-              <img :src="restaurant.logo" :alt="restaurant.name" @mouseover="handleMouseOver(restaurant.name)"
-                @mouseout="hoveredRestaurantName = ''" @click.prevent="navigateToPage(restaurant)" />
-              <div v-if="hoveredRestaurantName === restaurant.name" class="restaurant-name">
-                {{ restaurant.name }}
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <h2>Elige el que quieras o dale a Buscar.</h2>
-
-      <section>
-        <h2 class="subtitulo">Suma tu Local a nuestra pagina.</h2>
+    <main>
+      <h1>
+        <span
+          >Resolvemos la reserva online para tus restaurantes favoritos.</span
+        >
+      </h1>
+      <section class="container">
         <h2>
-          <span>Coloca a tu restaurante en una comunidad de miles de amantes de
-            la gastronomía que buscan reservar en los mejores restaurantes de
-            tu ciudad. Sé parte de dicha red de restaurantes y
-            comensales.</span>
+          Te mostramos los mejores restaurantes cercanos a tu domicilio y con
+          solo un par de clics podrás hacer tu reserva. Elige donde comer y
+          listo a disfrutar la experiencia con familiares y amigos.
         </h2>
       </section>
-
       <section>
-        <h2 class="subtitulo">Organiza la gestion de reservas.</h2>
-        <h2>
-          <span>
-            Gestiona todas tus reservas en un único lugar agilizando y
-            simplificando la gestión. Maximiza la ocupación de tu
-            restaurante.</span>
-        </h2>
-
-
-        <div class="equipo">
-          <h2 class="equipos">Equipo de Trabajo</h2>
-          <div class="integrante">
-            <img src="./IMAGENES/Equipo/alex.jpeg" alt="alex">
-            <p>Alejandro Blech</p>
+        <div id="app" class="carousel-container">
+          <div class="carousel-inner">
+            <div
+              class="carousel-slide"
+              v-for="(restaurant, index) in restaurants"
+              :key="index"
+            >
+              <a
+                :href="'../PAGES/reserva.html?logo=' + encodeURIComponent(restaurant.logo)"
+                target="_blank"
+              >
+                <img
+                  :src="restaurant.logo"
+                  :alt="restaurant.name"
+                  @mouseover="handleMouseOver(restaurant.name)"
+                  @mouseout="hoveredRestaurantName = ''"
+                  @click.prevent="navigateToPage(restaurant)"
+                />
+                <div
+                  v-if="hoveredRestaurantName === restaurant.name"
+                  class="restaurant-name"
+                >
+                  {{ restaurant.name }}
+                </div>
+              </a>
+            </div>
           </div>
-          <div class="integrante">
-            <img src="./IMAGENES/Equipo/joselo.jpg" alt="joselo">
-            <p>Jose Luis Elisseche</p>
+        </div>
+      </section>
+      <section>
+        <h2>Elige el que quieras o dale a Buscar.</h2>
+
+        <section>
+          <h2 class="subtitulo">Suma tu Local a nuestra pagina.</h2>
+          <h2>
+            <span
+              >Coloca a tu restaurante en una comunidad de miles de amantes de
+              la gastronomía que buscan reservar en los mejores restaurantes de
+              tu ciudad. Sé parte de dicha red de restaurantes y
+              comensales.</span
+            >
+          </h2>
+        </section>
+
+        <section>
+          <h2 class="subtitulo">Organiza la gestion de reservas.</h2>
+          <h2>
+            <span>
+              Gestiona todas tus reservas en un único lugar agilizando y
+              simplificando la gestión. Maximiza la ocupación de tu
+              restaurante.</span
+            >
+          </h2>
+        </section>
+
+        <section>
+          <h2 class="subtitulo">Nuestros Clientes</h2>
+          <!-- Mapa integrado aquí -->
+          <div id="mi_mapa" class="map-container">
+            <!-- Aquí va tu mapa -->
           </div>
-          <div class="integrante">
-            <img src="./IMAGENES/Equipo/roman.jpeg" alt="roman">
-            <p>Roman Terciana</p>
+        </section>
+
+          <div class="equipo"><br>
+            <h2 class="equipos">Nuestro Equipo de Trabajo</h2>
+            <div class="integrante">
+              <img src="./IMAGENES/Equipo/alex.jpeg" alt="alex" />
+              <p>Alejandro Blech</p>
+            </div>
+            <div class="integrante">
+              <img src="./IMAGENES/Equipo/joselo.jpg" alt="joselo" />
+              <p>Jose Luis Elisseche</p>
+            </div>
+            <div class="integrante">
+              <img src="./IMAGENES/Equipo/roman.jpeg" alt="roman" />
+              <p>Roman Terciana</p>
+            </div>
           </div>
+        </section>
+      </section>
+    </main>
 
-  </main>
+    <footer>
+      <!-- Aquí va el pie de página -->
+    </footer>
 
-  <footer>
-
-  </footer>
-
-  </div>
-  <script>
-    // Define una variable global con la URL del logo
-    window.logoUrl = 'url-del-logo-seleccionado';
-  </script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <script src="./JS/index.js"></script>
-</body>
-
+    <script>
+      // Define una variable global con la URL del logo
+      window.logoUrl = "url-del-logo-seleccionado";
+    </script>
+    <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    
+    <script src="/JS/index.js"></script>
+  </body>
 </html>

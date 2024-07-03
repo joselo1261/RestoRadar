@@ -32,6 +32,7 @@ createApp({
           this.cargando = false; // Asegurar que se marque como no cargando aunque haya errores
         });
     },
+    
     initMap() {
       // Crear un mapa de acuerdo a las coordenadas de lat y long
       this.map = L.map("mi_mapa").setView([-34.58889, -58.43327], 12);
@@ -152,5 +153,3 @@ document.querySelector("footer").innerHTML = `
         </p>
       </div>
     </footer>`;
-
-

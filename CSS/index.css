@@ -362,3 +362,11 @@ footer {
     max-width: 5rem;
   }
 }
+
+.map-container {
+  height: 400px; /* Altura deseada */
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Borde opcional */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden; /* Para asegurar que no haya desbordamiento */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
