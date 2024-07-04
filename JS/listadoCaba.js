@@ -66,7 +66,7 @@ createApp({
     
       const opt = {
         margin: 0.5,
-        filename: 'listado_gastronomico_caba.pdf',
+        filename: 'Oferta_Gastronomica_CABA.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 4 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
