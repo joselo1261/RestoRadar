@@ -17,7 +17,6 @@
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../CSS/mapa.css">
 
-    
 </head>
 
 <body>
@@ -26,8 +25,19 @@
     </header>
     <div id="app" class="container">
         <h1>MAPA RESTAURANTES</h1>
-        <div id="mi_mapa" class="embed-responsive embed-responsive-16by9">
-          <!-- Aquí va tu mapa -->
+        <!-- Leyendas de colores -->
+        <div class="legend">
+            <div v-for="(color, cocina) in cocinaColors" :key="cocina" class="legend-item">
+                <div class="legend-color" :style="{ backgroundColor: color }"></div>
+                <div class="legend-name">{{ cocina }}</div>
+            </div>
+        </div>
+        <!-- Contenedor del mapa y leyendas -->
+        <div class="map-container">
+            <div id="mi_mapa" class="embed-responsive embed-responsive-16by9">
+                <!-- Aquí va tu mapa -->
+            </div>
+            
         </div>
     </div>
 

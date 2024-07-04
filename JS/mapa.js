@@ -11,6 +11,14 @@ createApp({
       url: 'https://user1261.pythonanywhere.com/restaurantes',
       cargando: true,
       map: null,
+      cocinaColors: {
+        parrilla: 'red',
+        italiana: 'green',
+        oriental: 'yellow',
+        pizzeria: 'brown',
+        vegetariano: 'orange',
+        argentina: 'blue',
+      },
     };
   },
   methods: {
@@ -42,9 +50,40 @@ createApp({
         attribution: '&copy; <a href="">RestoradarMap</a>',
       }).addTo(this.map);
 
-      // Muestra ubicacion en el mapa y haciendo click muestra datos del mismo
+      // Definir colores para tipos de cocina
+      const cocinaColors = {
+        parrilla: 'red',
+        italiana: 'green',
+        oriental: 'yellow',
+        pizzeria: 'brown',
+        vegetariano: 'orange',
+        argentina: 'blue',
+      };
+
+      // Mostrar marcadores en el mapa con diferentes colores según el tipo de cocina
       this.restaurantes.forEach(restaurante => {
-        const marker = L.marker([restaurante.latitud, restaurante.longitud])
+        let color = 'black'; // Color por defecto
+
+        // Recorrer el array "cocina" para asignar el color correcto
+        if (restaurante.cocina && Array.isArray(restaurante.cocina)) {
+          restaurante.cocina.forEach(subcategoria => {
+            const cocina = subcategoria.toString().toLowerCase().trim();
+            if (cocinaColors[cocina]) {
+              color = cocinaColors[cocina];
+            }
+          });
+        }
+
+        // Crear un ícono personalizado para el marcador
+        const markerIcon = L.divIcon({
+          className: 'custom-div-icon',
+          html: `<div style="background-color: ${color}; width: 20px; height: 20px; border-radius: 50%;"></div>`,
+          iconSize: [20, 20],
+          iconAnchor: [10, 10] // Ajustar el ancla del icono si es necesario
+        });
+
+        // Crear y añadir el marcador al mapa
+        L.marker([restaurante.latitud, restaurante.longitud], { icon: markerIcon })
           .addTo(this.map)
           .bindPopup(`
             <div style="font-size: 12px; max-width: 150px;">
@@ -54,13 +93,7 @@ createApp({
                 <img src="${restaurante.foto}" style="width: 100%; height: auto;">
               </p>
             </div>
-          `, {
-            offset: [0,20] // Desplaza el popup hacia abajo
-          });
-      
-        marker.on('click', () => {
-          this.map.panBy([0, -100], { animate: true });
-        });
+          `, { offset: [0, 20] }); // Desplazar el popup hacia abajo
       });
 
       // Función para mostrar latitud y longitud al hacer clic en el mapa
@@ -69,10 +102,11 @@ createApp({
       });
     },
   },
-  created() {
+  mounted() {
     this.fetchData(this.url);
   },
 }).mount('#app');
+
 
 
 // ---------------- HEADER ---------------------

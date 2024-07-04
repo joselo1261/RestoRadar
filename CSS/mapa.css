@@ -153,3 +153,57 @@ header {
 #mi_mapa {
   height: 600px;
 }
+
+<!-- Estilos adicionales para las leyendas -- .legend {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la leyenda */
+.legend {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.legend-name {
+  margin-left: 5px;
+}
+
+
+#colores-cocina {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* Espacio entre los colores y el mapa */
+}
+
+.color-cocina {
+  display: flex;
+  align-items: center;
+}
+
+.color-cocina div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px; /* Espacio entre cada color */
+}
+
