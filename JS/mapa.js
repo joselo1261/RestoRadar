@@ -86,20 +86,20 @@ createApp({
         L.marker([restaurante.latitud, restaurante.longitud], { icon: markerIcon })
           .addTo(this.map)
           .bindPopup(`
-            <div style="font-size: 12px; max-width: 150px;">
-              <h4 style="margin: 0;">${restaurante.name}</h4>
-              <p style="margin: 0;"><strong>Dirección:</strong> ${restaurante.direccion}</p>
-              <p style="margin: 0;">
-                <img src="${restaurante.foto}" style="width: 100%; height: auto;">
-              </p>
+            <div style="font-size: 12px; max-width: 300px; display: flex; align-items: center;">
+            <img src="${restaurante.foto}" style="width: 80px; height: 80px; margin-right: 10px;">
+            <div>
+            <h4 style="margin: 0;">${restaurante.name}</h4>
+            <p style="margin: 0;"><strong>Dirección:</strong> ${restaurante.direccion}</p>
+            </div>
             </div>
           `, { offset: [0, 20] }); // Desplazar el popup hacia abajo
-      });
+        });
 
-      // Función para mostrar latitud y longitud al hacer clic en el mapa
-      this.map.on('click', e => {
-        alert("Posición: " + e.latlng);
-      });
+        // Función para mostrar latitud y longitud al hacer clic en el mapa
+          this.map.on('click', e => {
+          alert("Posición: " + e.latlng);
+        });
     },
   },
   mounted() {
