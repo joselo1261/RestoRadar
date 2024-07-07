@@ -1,5 +1,3 @@
-// Usando html2pdf.js => https://www.npmjs.com/package/html2pdf.js
-
 const { createApp, nextTick } = Vue;
 
 createApp({
@@ -60,34 +58,55 @@ createApp({
       );
     },
 
-    async generarPDF() {
-      await nextTick(); // Esperar a que el DOM esté completamente actualizado
-      const element = document.getElementById("tablaDatos"); // ID del elemento que quieres convertir a PDF
+    // Usando html2pdf.js => https://www.npmjs.com/package/html2pdf.js
+    generarPDF() {
+      this.$nextTick(async () => {
+        const element = document.getElementById("tablaDatos");
+        console.log("Elemento encontrado:", element);
     
-      const opt = {
-        margin: 0.5,
-        filename: 'Oferta_Gastronomica_CABA.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 4 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-    
-      // Verificar si html2pdf está definido antes de usarlo
-      if (typeof html2pdf !== "undefined") {
-        console.log("Generando PDF...");
-        try {
-          // Esperar dos segundos antes de capturar el contenido
-          setTimeout(async () => {
-            await html2pdf().from(element).set(opt).save();
-          }, 2000);
-        } catch (error) {
-          console.error("Error al generar PDF:", error);
+        if (!element) {
+          console.error("Elemento 'tablaDatos' no encontrado en el DOM.");
+          return;
         }
-      } else {
-        console.error(
-          "html2pdf no está definido. Asegúrate de incluir la biblioteca html2pdf en tu página."
-        );
-      }
+    
+        console.log("Contenido del elemento:", element.innerHTML);
+    
+        const opt = {
+          margin: 0.5,
+          filename: 'Oferta_Gastronomica_CABA.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 4 },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+    
+        if (typeof html2pdf !== "undefined") {
+          console.log("Generando PDF...");
+          try {
+            await html2pdf().from(element).set(opt).save();
+            console.log("PDF generado correctamente.");
+          } catch (error) {
+            console.error("Error al generar PDF:", error);
+          }
+        } else {
+          console.error("html2pdf no está definido. Asegúrate de incluir la biblioteca html2pdf en tu página.");
+        }
+      });
+    },
+    
+    
+    // Usando Biblioteca de xlsx y file-saver para generar archivo Excel.
+    generarXLS() {
+      const ws = XLSX.utils.json_to_sheet(
+        this.datosFiltrados.map((dato) => dato.properties)
+      );
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Datos Filtrados");
+
+      const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+
+      // Utiliza FileSaver para que el usuario elija dónde guardar el archivo
+      const blob = new Blob([wbout], { type: 'application/octet-stream' });
+      saveAs(blob, 'Oferta_Gastronomica_CABA.xlsx');
     },
     
   },
@@ -96,10 +115,6 @@ createApp({
     this.fetchData(this.url);
   },
 }).mount("#app");
-
-
-
-
 
 
 // ---------------- HEADER ---------------------

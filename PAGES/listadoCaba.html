@@ -7,6 +7,10 @@
     <!-- Biblioteca de html2pdf.js para generar pdfs -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
     
+    <!-- Biblioteca de xlsx y file-saver para generar archivo Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
@@ -25,7 +29,8 @@
     <div id="app" class="container">
         <h1 class="my-4">LISTADO CLIENTES POTENCIALES CABA</h1>
         <div class="text-right mb-3">
-            <button class="btn btn-dark text-white" @click="generarPDF">Descargar PDF</button>
+            <button class="btn btn-danger text-white mr-2" @click="generarPDF">Descargar PDF</button>
+            <button class="btn btn-success text-white" @click="generarXLS">Descargar Excel</button>
         </div>
 
         <!-- Filtros -->
