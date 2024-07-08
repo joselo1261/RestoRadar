@@ -90,7 +90,8 @@ createApp({
       restaurantCocina: [],
       restaurantCapacidad: 0,
       hoveredRestaurantName: "",
-      url: "https://user1261.pythonanywhere.com/restaurantes",
+      // url: "../JSON/restaurantes.json", // => Para usar Json local
+      url: "https://user1261.pythonanywhere.com/restaurantes", // Json PythonAnyWhere
       cargando: true,
       map: null,
     };
